@@ -2,184 +2,180 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: url(https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/fondo_index.png) no-repeat center center fixed;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    justify-content: space-between;
-  }
+<Layout title="My Resume">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .resume {
+      background-color: #111;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+    .header {
+      background-color: #000;
+      padding: 20px;
+      text-align: center;
+    }
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+    .about-me, .abilities, .position, .teams {
+      background-color: #222;
+      border-radius: 5px;
+      padding: 15px;
+    }
+    .photo {
+      width: 200px; /* Ancho fijo */
+      height: 200px; /* Altura fija */
+      overflow: hidden; /* Oculta el desbordamiento */
+      border-radius: 5px; /* Esquinas redondeadas */
+    
+      
+    }
+    .photo img {
+      width: 150%;
+      height: 150%;
+      object-fit: cover; /* Ajusta la imagen */
+      
+      
+    }
+    .ability-bar {
+      display: flex;
+      margin-bottom: 10px;
+    }
+    .ability-dot {
+      width: 15px;
+      height: 15px;
+      background-color: #00ccff;
+      border-radius: 50%;
+      margin-right: 5px;
+    }
+    .field {
+      width: 100%;
+      height: 150px;
+      border: 2px solid #00ccff;
+      position: relative;
+    }
+    .player-position {
+      width: 20px;
+      height: 20px;
+      background-color: #00ccff;
+      border-radius: 50%;
+      position: absolute;
+    }
+    .history {
+      background-color: #222;
+      border-radius: 5px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+  </style>
 
-  .contenedor {
-    width: 96%;
-    margin: 130px auto;
-    background-color: rgba(0, 0, 0, 0.7);
-    border: 5px solid #004488;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    gap: 20px;
-    grid-template-areas:
-      "texto foto"
-      "logo  foto";
-  }
-
-  .texto {
-    grid-area: texto;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-    overflow-y: auto;
-    max-height: 700px;
-  }
-
-  .foto {
-    grid-area: foto;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .foto img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .equipos {
-    grid-area: logo;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5px;
-  }
-
-  .equipos .equipo {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 10px;
-    border-radius: 10px;
-    width: 50%;
-  }
-
-  .equipos .equipo img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 5px;
-  }
-</style>
-
-<Layout title="Nueva Pestaña">
-  <main>
-    <div class="contenedor">
-      <div class="texto">
-        <h1 class="text-center mb-4 font-bold" style="font-size: 26px">
-          Camilo Andrés Vargas Gil
-        </h1>
-
-        <p>
-          Nacido el 9 de marzo de 1989 en Bogotá, es un destacado arquero
-          colombiano que ha tenido una carrera notable tanto en clubes como en
-          la Selección Colombia. Su trayectoria profesional comenzó en
-          Independiente Santa Fe, donde debutó en 2007. Desde sus primeros años,
-          Vargas mostró un gran potencial, ganando la Copa Colombia en 2009 y
-          siendo una figura clave en la obtención del título del Torneo Apertura
-          en 2012, que puso fin a una sequía de 36 años sin títulos de liga para
-          el club.
-        </p>
-        <h1 class="text-center my-4 font-bold" style="font-size: 26px">
-          Clubes
-        </h1>
-        <p>
-          En 2015, Vargas se unió a Atlético Nacional, donde continuó su éxito
-          al ganar la Superliga Colombiana y la Copa Libertadores en 2016. Su
-          desempeño en Nacional le permitió dar el salto al fútbol
-          internacional, uniéndose brevemente a Argentinos Juniors en 2016 antes
-          de regresar a Colombia con Deportivo Cali. En 2019, Vargas se trasladó
-          a México para unirse al Atlas FC, donde ha sido una pieza fundamental
-          en la defensa del equipo.
-        </p>
-        <h1 class="text-center my-4 font-bold" style="font-size: 26px">Selección</h1>
-        <p>
-          Con la Selección Colombia, Camilo Vargas debutó en mayo de 2014 en un
-          amistoso contra Senegal. Aunque inicialmente fue suplente de David
-          Ospina, Vargas ha demostrado ser un arquero confiable y ha ganado su
-          lugar como titular en varias ocasiones. Ha participado en importantes
-          torneos internacionales, incluyendo la Copa América y las
-          eliminatorias para la Copa del Mundo. Su experiencia y liderazgo han
-          sido vitales para el equipo nacional.
-        </p>
-        <h1 class="text-center my-4 font-bold" style="font-size: 26px">Mejores momentos selección</h1>
-        <p>
-          Uno de los momentos más destacados de Vargas con la selección fue
-          durante la Copa América 2024, donde Colombia llegó a la final. Su
-          actuación en el torneo fue crucial, especialmente en las semifinales
-          contra Uruguay, donde realizó varias atajadas decisivas que aseguraron
-          la victoria de su equipo. Aunque Colombia no ganó la final, el
-          desempeño de Vargas fue ampliamente elogiado y consolidó su reputación
-          como uno de los mejores arqueros de la región.
-        </p>
-        <h1 class="text-center my-4 font-bold" style="font-size: 26px">Restos propios</h1>
-        <p>
-          A lo largo de su carrera, Vargas ha demostrado una gran resiliencia y
-          capacidad para superar desafíos. Ha tenido que competir con otros
-          talentosos arqueros por un lugar en el equipo titular, pero su
-          dedicación y profesionalismo le han permitido mantenerse en la élite
-          del fútbol colombiano e internacional. Su capacidad para mantener la
-          calma bajo presión y su habilidad para realizar atajadas
-          espectaculares lo han convertido en un favorito de los aficionados.
-        </p>
-        <h1 class="text-center my-4 font-bold" style="font-size: 26px">Mejores momentos clubs</h1>
-        <p>
-          En el Atlas FC, Vargas ha sido un líder tanto dentro como fuera del
-          campo. Su experiencia y habilidades han sido fundamentales para el
-          equipo, y ha ayudado a Atlas a competir en la Liga MX con
-          consistencia. Además, ha sido reconocido por su capacidad para detener
-          penales, lo que ha sido un recurso valioso en momentos críticos de los
-          partidos.
-        </p>
-        <h1 class="text-center my-4 font-bold" style="font-size: 26px">Actualidad</h1>
-        <p>
-          Recientemente, Vargas ha enfrentado algunos desafíos, incluyendo una
-          expulsión en un partido de eliminatorias que lo dejó fuera de la
-          convocatoria de la selección temporalmente. Sin embargo, su influencia
-          en el equipo es indiscutible, y se espera que regrese pronto para
-          continuar contribuyendo al éxito de la Selección Colombia. Su ausencia
-          ha resaltado aún más su importancia para el equipo.
-        </p>
+  <div class="container">
+    <div class="resume">
+      <div class="header">
+        <h1 class="text-4xl font-bold">MY RESUME</h1>
       </div>
-
-      <!-- Logo del equipo justo debajo del texto -->
-      <div class="equipos">
-        <div class="equipo">
-          <a href="atlas">
-            <img
-              src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/atlas.png"
-              alt="atlas"
-            />
-          </a>
+      <div class="content">
+        <div class="photo">
+          <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/camilo_vargas.png" alt="Player Photo" />
+        </div>
+        <div class="about-me">
+          <h2 class="text-2xl font-bold mb-4">ABOUT ME</h2>
+          <p>PLACE OF BIRTH: Spain</p>
+          <p>DATE OF BIRTH: 12-04-1987</p>
+          <p>AGE: 34</p>
+          <p>HEIGHT: 1.85 m</p>
+          <p>SKILFUL FOOT: right foot</p>
+        </div>
+        <div class="abilities">
+          <h2 class="text-2xl font-bold mb-4">MY ABILITIES</h2>
+          <div class="ability-bar">
+            <span class="w-24">Ball control</span>
+            {[...Array(9)].map((_, i) => (
+              <div key={i} class="ability-dot"></div>
+            ))}
+          </div>
+          <div class="ability-bar">
+            <span class="w-24">Dribbling</span>
+            {[...Array(8)].map((_, i) => (
+              <div key={i} class="ability-dot"></div>
+            ))}
+          </div>
+          <div class="ability-bar">
+            <span class="w-24">Finishing</span>
+            {[...Array(7)].map((_, i) => (
+              <div key={i} class="ability-dot"></div>
+            ))}
+          </div>
+          <div class="ability-bar">
+            <span class="w-24">Acceleration</span>
+            {[...Array(6)].map((_, i) => (
+              <div key={i} class="ability-dot"></div>
+            ))}
+          </div>
+        </div>
+        <div class="position">
+          <h2 class="text-2xl font-bold mb-4">POSITION ON THE FIELD</h2>
+          <div class="field">
+            <div class="player-position" style="top: 30%; left: 20%;"></div>
+            <div class="player-position" style="top: 30%; right: 20%;"></div>
+          </div>
+          <p class="mt-2">Winger or central forward</p>
+        </div>
+        <div class="teams">
+          <h2 class="text-2xl font-bold mb-4">PREVIOUS TEAMS</h2>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">2013-2015</span>
+            <span>North Lions</span>
+          </div>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">2016-2018</span>
+            <span>Slidesgoal FC</span>
+          </div>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">2019-2021</span>
+            <span>Downtown Bulls</span>
+          </div>
         </div>
       </div>
-
-      <!-- Sección de Foto a la derecha del texto -->
-      <div class="foto">
-        <img
-          src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/camilo_vargas.png"
-          alt="Foto del jugador"
-        />
+      <div class="history">
+        <h2 class="text-2xl font-bold mb-4">PLAYER HISTORY</h2>
+        <p class="mb-4">
+          Camilo Andrés Vargas Gil, nacido el 9 de marzo de 1989 en Bogotá, es un destacado arquero
+          colombiano que ha tenido una carrera notable tanto en clubes como en la Selección Colombia.
+          Su trayectoria profesional comenzó en Independiente Santa Fe, donde debutó en 2007.
+        </p>
+        <p class="mb-4">
+          En 2015, Vargas se unió a Atlético Nacional, donde continuó su éxito al ganar la Superliga
+          Colombiana y la Copa Libertadores en 2016. Posteriormente, tuvo breves pasos por Argentinos
+          Juniors y Deportivo Cali antes de unirse al Atlas FC en México en 2019.
+        </p>
+        <p class="mb-4">
+          Con la Selección Colombia, Vargas debutó en mayo de 2014. Ha participado en importantes
+          torneos internacionales, incluyendo la Copa América, donde su actuación en la edición de 2024
+          fue particularmente destacada, ayudando a Colombia a llegar a la final.
+        </p>
+        <p>
+          A lo largo de su carrera, Vargas ha demostrado gran resiliencia y habilidad, convirtiéndose
+          en un favorito de los aficionados por su capacidad para mantener la calma bajo presión y
+          realizar atajadas espectaculares. Su liderazgo y experiencia han sido fundamentales tanto
+          en sus clubes como en la selección nacional.
+        </p>
       </div>
     </div>
-  </main>
-  <footer class="footer">
-    <p>© 2024 Tu Empresa. Todos los derechos reservados.</p>
-  </footer>
+  </div>
 </Layout>
