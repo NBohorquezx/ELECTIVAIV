@@ -1,14 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
 ---
-
-<Layout title="My Resume">
+<Layout title="C.vargas">
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #000;
       color: #fff;
+      
     }
     .container {
       max-width: 1200px;
@@ -38,19 +38,17 @@ import Layout from "../layouts/Layout.astro";
       padding: 15px;
     }
     .photo {
-      width: 200px; /* Ancho fijo */
-      height: 200px; /* Altura fija */
-      overflow: hidden; /* Oculta el desbordamiento */
-      border-radius: 5px; /* Esquinas redondeadas */
-    
-      
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+      border-radius: 5px;
+      margin: 0 auto;
+      transform: translateX(7%); /* Desplazo la imagen 10% a la derecha */
     }
     .photo img {
-      width: 150%;
-      height: 150%;
-      object-fit: cover; /* Ajusta la imagen */
-      
-      
+      width: 170%; /* Hago la imagen más grande */
+      height: 170%; /* Hago la imagen más grande */
+      object-fit: cover;
     }
     .ability-bar {
       display: flex;
@@ -82,8 +80,17 @@ import Layout from "../layouts/Layout.astro";
       padding: 20px;
       margin-top: 20px;
     }
+    .equipos {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+      display: flex;
+      gap: 40px; /* Ajusto la distancia entre las imágenes */
+      justify-content: center; /* Centrar las imágenes */
+      width: 70%; /* Hago la imagen más grande */
+      height: 80%; /* Hago la imagen más grande */
+      transform: translateX(25%); /* Desplazo la imagen 10% a la derecha */
+    }
   </style>
-
   <div class="container">
     <div class="resume">
       <div class="header">
@@ -94,50 +101,28 @@ import Layout from "../layouts/Layout.astro";
           <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/camilo_vargas.png" alt="Player Photo" />
         </div>
         <div class="about-me">
-          <h2 class="text-2xl font-bold mb-4">ABOUT ME</h2>
-          <p>PLACE OF BIRTH: Spain</p>
-          <p>DATE OF BIRTH: 12-04-1987</p>
-          <p>AGE: 34</p>
-          <p>HEIGHT: 1.85 m</p>
-          <p>SKILFUL FOOT: right foot</p>
+          <h2 class="text-2xl font-bold mb-4">
+            ACERCA DE MÍ
+          </h2>
+          <p>LUGAR DE NACIMIENTO: Bogotá-Colombia</p>
+          <p>FECHA DE NACIMIENTO: 09-03-1989</p>
+          <p>EDAD: 35</p>
+          <p>ALTURA: 1.88 m</p>
+          <p>PIERNA HABIL: Pierna derecha</p>
         </div>
-        <div class="abilities">
-          <h2 class="text-2xl font-bold mb-4">MY ABILITIES</h2>
-          <div class="ability-bar">
-            <span class="w-24">Ball control</span>
-            {[...Array(9)].map((_, i) => (
-              <div key={i} class="ability-dot"></div>
-            ))}
+        <div class="equipos">
+          <div class="equipo">
+            <a href="atlas">
+              <img src="https://spar2099.sirv.com/la_seleccion/atlas.png" alt="atlas" />
+            </a>
           </div>
-          <div class="ability-bar">
-            <span class="w-24">Dribbling</span>
-            {[...Array(8)].map((_, i) => (
-              <div key={i} class="ability-dot"></div>
-            ))}
+          <div class="equipo">
+            <img src="https://spar2099.sirv.com/la_seleccion/MX_logo.png" alt="Equipo 2" />
           </div>
-          <div class="ability-bar">
-            <span class="w-24">Finishing</span>
-            {[...Array(7)].map((_, i) => (
-              <div key={i} class="ability-dot"></div>
-            ))}
-          </div>
-          <div class="ability-bar">
-            <span class="w-24">Acceleration</span>
-            {[...Array(6)].map((_, i) => (
-              <div key={i} class="ability-dot"></div>
-            ))}
-          </div>
-        </div>
-        <div class="position">
-          <h2 class="text-2xl font-bold mb-4">POSITION ON THE FIELD</h2>
-          <div class="field">
-            <div class="player-position" style="top: 30%; left: 20%;"></div>
-            <div class="player-position" style="top: 30%; right: 20%;"></div>
-          </div>
-          <p class="mt-2">Winger or central forward</p>
         </div>
         <div class="teams">
-          <h2 class="text-2xl font-bold mb-4">PREVIOUS TEAMS</h2>
+          <h2 class="text-2xl font-bold mb-4">EQUIPOS ANTERIORES</h2>
+          <br>
           <div class="flex justify-between">
             <span style="color: #00ccff;">2013-2015</span>
             <span>North Lions</span>
@@ -151,9 +136,46 @@ import Layout from "../layouts/Layout.astro";
             <span>Downtown Bulls</span>
           </div>
         </div>
+        
+        <div class="position">
+          <h2 class="text-2xl font-bold mb-4">POSICIÓN EN EL CAMPO</h2>
+          <div class="field">
+            <div class="player-position" style="top: 60%; left: 50%;"></div>
+          </div>
+          <p class="mt-2">Winger or central forward</p>
+        </div>
+        <div class="abilities">
+          <h2 class="text-2xl font-bold mb-4">HABILIDADES</h2>
+          <br>
+          <div class="ability-bar">
+            <span class="w-24">control </span>
+            {[...Array(9)].map((_, i) => (
+              <div key={i} class="ability-dot"></div>
+            ))}
+          </div>
+          <div class="ability-bar">
+            <span class="w-24">Regate</span>
+            {[...Array(8)].map((_, i) => (
+              <div key={i} class="ability-dot"></div>
+            ))}
+          </div>
+          <div class="ability-bar">
+            <span class="w-24">Remate</span>
+            {[...Array(7)].map((_, i) => (
+              <div key={i} class="ability-dot"></div>
+            ))}
+          </div>
+          <div class="ability-bar">
+            <span class="w-24">Aceleración
+            </span>
+            {[...Array(6)].map((_, i) => (
+              <div key={i} class="ability-dot"></div>
+            ))}
+          </div>
+        </div>
       </div>
       <div class="history">
-        <h2 class="text-2xl font-bold mb-4">PLAYER HISTORY</h2>
+        <h2 class="text-2xl font-bold mb-4">HISTORIA DEL JUGADOR</h2>
         <p class="mb-4">
           Camilo Andrés Vargas Gil, nacido el 9 de marzo de 1989 en Bogotá, es un destacado arquero
           colombiano que ha tenido una carrera notable tanto en clubes como en la Selección Colombia.
