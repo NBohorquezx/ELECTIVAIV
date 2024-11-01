@@ -4,12 +4,19 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="C.vargas">
   <style>
     body {
-      margin: 0;
+    margin: 0;
       font-family: Arial, sans-serif;
       background-color: #000;
       color: #fff;
-      
-    }
+      cursor: url('https://spar2099.sirv.com/la_seleccion/guayo2.png') 16 16, auto;
+  }
+  a { cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), pointer; /* Cambia el cursor sobre enlaces */ } 
+  button { cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), pointer; /* Cambia el cursor sobre botones */ } 
+  .custom-cursor { cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), auto; /* Cambia el cursor en elementos específicos */ } /* Mantener el cursor al hacer clic */ 
+  a:active,
+   button:active, 
+   .custom-cursor:active { 
+    cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), auto; /* Mantener el cursor al hacer clic */ }
     .container {
       max-width: 1200px;
       margin: 0 auto;

@@ -3,30 +3,85 @@ import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
 
 const jugadores = [
-  { nombre: 'C.VARGAS', numero: 1, posicion: 'portero', imagen: 'https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/camilo_vargas.png'},
-  { nombre: 'C.CUESTA', numero: 2, posicion: 'defensa', imagen: 'https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/camilo_cuesta.png'},
-  { nombre: 'D.SÁNCHEZ', numero: 23, posicion: 'defensa', imagen: 'https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/d.sanchez.png'},
-  { nombre: 'D.MUÑOZ', numero: 4, posicion: 'defensa', imagen: 'https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/d_mu%C3%B1oz.png'},
-  { nombre: 'J.MOJICA', numero: 17, posicion: 'defensa', imagen: 'https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/j_mojica.png'},
-  { nombre: 'R.RIOS', numero: 6, posicion: 'medio-defensivo', imagen: 'https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/r_rios.png'},
-  { nombre: 'J.LERMA', numero: 16, posicion: 'medio-defensivo', imagen: 'https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/j.lerma.jpg'},
-  { nombre: 'J.RODRÍGUEZ', numero: 10, posicion: 'medio-ofensivo', imagen: "https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/j_rodriguez.png"},
-  { nombre: 'J.ARIAS', numero: 11, posicion: 'medio-ofensivo', imagen: 'https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/j.arias.png'},
-  { nombre: 'L.DÍAZ', numero: 7, posicion: 'medio-ofensivo', imagen: 'https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/l_diaz.png'},
-  { nombre: 'J.CÓRDOBA', numero: 24, posicion: 'delantero', imagen: 'https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/j_cordoba.png'},
+  { nombre: 'C.VARGAS', numero: 1, posicion: 'portero', imagen: 'https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/camilo_vargas.png', titular: true},
+  { nombre: 'C.CUESTA', numero: 2, posicion: 'defensa', imagen: 'https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/camilo_cuesta.png', titular: true},
+  { nombre: 'D.SÁNCHEZ', numero: 23, posicion: 'defensa', imagen: 'https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/d.sanchez.png', titular: true},
+  { nombre: 'D.MUÑOZ', numero: 4, posicion: 'defensa', imagen: 'https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/d_mu%C3%B1oz.png', titular: true},
+  { nombre: 'J.MOJICA', numero: 17, posicion: 'defensa', imagen: 'https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/j_mojica.png', titular: true},
+  { nombre: 'R.RIOS', numero: 6, posicion: 'medio-defensivo', imagen: 'https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/r_rios.png', titular: true},
+  { nombre: 'J.LERMA', numero: 16, posicion: 'medio-defensivo', imagen: 'https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/j.lerma.jpg', titular: true},
+  { nombre: 'J.RODRÍGUEZ', numero: 10, posicion: 'medio-ofensivo', imagen: "https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/j_rodriguez.png", titular: true},
+  { nombre: 'J.ARIAS', numero: 11, posicion: 'medio-ofensivo', imagen: 'https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/j.arias.png', titular: true},
+  { nombre: 'L.DÍAZ', numero: 7, posicion: 'medio-ofensivo', imagen: 'https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/l_diaz.png', titular: true},
+  { nombre: 'J.CÓRDOBA', numero: 24, posicion: 'delantero', imagen: 'https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/j_cordoba.png', titular: true},
 ];
 ---
+
+<Layout title="Alineación del Equipo">
+  <main class="relative overflow-hidden" data-view-transition="hero">
+    <Header />
+    <div class="contenedor">  
+      <div class="player-selection">
+        Selecciona un jugador
+      </div>
+      <div class="cancha">
+        <div class="lineas-cancha"></div>
+        {jugadores.map((jugador) => (
+          <div class={`jugador ${jugador.posicion}`}>
+            <a 
+              href={`/${jugador.nombre.toLowerCase().replace(/\./g, '')}`} 
+              style={{ color: 'white', textDecoration: 'none' }} 
+              data-view-transition="hero"
+            >
+              {jugador.nombre}
+            </a>
+            <img src={jugador.imagen} alt={jugador.nombre} />
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="contenedor">  
+      <div class="seccion-porteros">
+        <h2>Porteros</h2>
+        <div class="porteros-container">
+          {jugadores.filter(jugador => jugador.posicion === 'portero').map((jugador) => (
+            <div class="card-portero">
+              <img src={jugador.imagen} alt={jugador.nombre} />
+              <div class="info-portero">
+                <h3>{jugador.nombre}</h3>
+                <p class={`estado ${jugador.titular ? 'titular' : 'suplente'}`}>
+                  {jugador.titular ? 'Titular' : 'Suplente'}
+                </p>
+                <button class="btn">Ver detalles</button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="fondo-desaturado">
+        <p>Selección Colombia - Alineación Titular</p>
+      </div>
+    </div>
+  </main>
+</Layout> 
 
 <style>
   body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: url(https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/fondo_index.png) no-repeat center center fixed;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      cursor: url('https://spar2099.sirv.com/la_seleccion/guayo2.png') 16 16, auto;
   }
+  a { cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), pointer; /* Cambia el cursor sobre enlaces */ } 
+  button { cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), pointer; /* Cambia el cursor sobre botones */ } 
+  .custom-cursor { cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), auto; /* Cambia el cursor en elementos específicos */ } /* Mantener el cursor al hacer clic */ 
+  a:active,
+   button:active, 
+   .custom-cursor:active { 
+    cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), auto; /* Mantener el cursor al hacer clic */ }
 
   .header {
     text-align: center;
@@ -47,7 +102,18 @@ const jugadores = [
   }
 
   main {
-    margin-top: 200px; /* Ajusta este valor según la altura del header */
+    margin-top: 80px;
+    padding: 20px;
+  }
+
+  .contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   }
 
   .player-selection {
@@ -59,6 +125,7 @@ const jugadores = [
     text-align: center;
     border-radius: 8px;
     font-size: 20px;
+    font-weight: bold;
     text-shadow: 
       -1px -1px 0 black,  
       1px -1px 0 black,
@@ -69,13 +136,13 @@ const jugadores = [
   .cancha {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/image.cancha.png') no-repeat center center;
     background-size: cover;
-    width: 80%;
-    height: 500px;
+    width: 100%;
+    height: 600px;
     margin: 20px auto;
     position: relative;
     border: 5px solid #004488;
     border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   }
 
   .lineas-cancha {
@@ -84,22 +151,36 @@ const jugadores = [
     height: 100%;
     background: url("img/image.cancha.png") no-repeat center center;
     background-size: contain;
+    opacity: 0.7;
   }
 
   .jugador {
     position: absolute;
     text-align: center;
     cursor: pointer;
-    color: white;
     width: 130px;
     height: 130px;
-    text-shadow: 
-      -1px -1px 0px black,  
-      1px -1px 0 black,
-      -1px 1px 0 black,
-      1px 1px 0 black,
-      0 0 5px black;
     transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .jugador a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.8));
+  }
+
+  
+
+  .jugador a:hover {
+    transform: scale(1.1);
+    background-color: rgba(0, 68, 136, 0.9);
   }
 
   .jugador img {
@@ -114,6 +195,7 @@ const jugadores = [
     border: 2px solid #ffffff;
     transition: transform 0.3s ease;
     z-index: 10;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   }
 
   .jugador:hover img {
@@ -121,197 +203,136 @@ const jugadores = [
     transform: translateX(-50%) scale(1.2);
   }
 
-  .jugador a {
-    display: inline-block;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-  }
-
-  .jugador a:hover {
-    transform: scale(1.1);
-    opacity: 0.8;
-  }
-
   /* Posiciones de los jugadores */
-  .portero { top: 90%; left: 52%; transform: translateX(-50%); }
-  .defensa:nth-of-type(6) { top: 60%; left: 15%; }
-  .defensa:nth-of-type(3) { top: 67%; left: 35%; }
-  .defensa:nth-of-type(4) { top: 67%; left: 60%; }
-  .defensa:nth-of-type(5) { top: 60%; left: 78%; }
-  .medio-defensivo:nth-of-type(8) { top: 50%; left: 35%; }
-  .medio-defensivo:nth-of-type(7) { top: 50%; left: 55%; }
-  .medio-ofensivo:nth-of-type(11) { top: 30%; left: 20%; }
-  .medio-ofensivo:nth-of-type(9) { top: 38%; left: 43%; }
-  .medio-ofensivo:nth-of-type(10) { top: 30%; left: 74%; }
-  .delantero { top: 20%; left: 50%; transform: translateX(-50%); }
+  .portero { bottom: 5%; left: 50%; transform: translateX(-50%); }
+  .defensa:nth-of-type(6) { bottom: 25%; left: 17%; }
+  .defensa:nth-of-type(3) { bottom: 20%; left: 33%; }
+  .defensa:nth-of-type(4) { bottom: 20%; left: 58%; }
+  .defensa:nth-of-type(5) { bottom: 25%; left: 75%; }
+  .medio-defensivo:nth-of-type(8) { bottom: 45%; left: 30%; }
+  .medio-defensivo:nth-of-type(7) { bottom: 45%; left: 60%; }
+  .medio-ofensivo:nth-of-type(11) { bottom: 60%; left: 20%; }
+  .medio-ofensivo:nth-of-type(9) { bottom: 50%; left: 45%; }
+  .medio-ofensivo:nth-of-type(11) { bottom: 55%; left: 20%; }
+  .medio-ofensivo:nth-of-type(10) { bottom: 55%; left: 70%; }
+  .delantero { bottom: 70%; left: 45%; }
 
-  .contenedor {
-    width: 66%;
-    margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    flex: 1;
-  }
-
-  .footer {
-    text-align: center;
-    padding: 5px;
-    background: url("img/image2.jpeg") no-repeat center center;
-    background-size: cover;
-    color: white;
-    width: 100%;
-    height: 40px;
-    position: relative;
-  }
-</style>
-
-<Layout title="Agenda">
-  <main class="relative overflow-hidden" data-view-transition="hero">
-    <Header />
-    <div class="contenedor">  
-      <div class="player-selection">
-        Selecciona un jugador
-      </div>
-      <div class="cancha">
-        <div class="lineas-cancha"></div>
-        {jugadores.map((jugador, index) => (
-          <div class={`jugador ${jugador.posicion}`}>
-            <a 
-              href={`/${jugador.nombre.toLowerCase().replace(/\./g, '')}`} 
-              style={{ color: 'white', textDecoration: 'none' }} 
-              data-view-transition="hero"
-            >
-              <span>{jugador.nombre} ({jugador.numero})</span>
-            </a>
-            <img src={jugador.imagen} alt={jugador.nombre} />
-          </div>
-        ))}
-      </div>
-    </div>
-  </main>
-</Layout> 
-
-<Layout title="Agenda">
-  <main class="relative overflow-hidden" data-view-transition="hero">
-    <Header />
-    <div class="contenedor">  
-      <!-- Sección de porteros -->
-      <div class="seccion-porteros">
-        <h1>Porteros</h1>
-        <div class="porteros-container">
-          {jugadores.filter(jugador => jugador.posicion === 'portero').map((jugador, index) => (
-            <div class="card-portero">
-              <img src={jugador.imagen} alt={jugador.nombre} />
-              <div class="info-portero">
-                <h2>{jugador.nombre}</h2>
-                <p class={`estado ${jugador.titular ? 'titular' : 'suplente'}`}>
-                  {jugador.titular ? 'Titular' : 'Suplente'}
-                </p>
-                <button class="btn">Ver detalles</button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <!-- Fondo desaturado debajo -->
-      <div class="fondo-desaturado">
-        <p>Aquí puedes agregar más contenido o dejarlo como fondo decorativo.</p>
-      </div>
-    </div>
-  </main>
-</Layout>
-
-<style>
-  /* Contenedor principal */
-  .contenedor {
-    margin-top: 50px;
-    text-align: center;
-  }
-
-  /* Estilos de la sección de porteros */
   .seccion-porteros {
-    margin: 20px auto;
-    background-color: rgba(0, 0, 0, 0.8);
+    margin: 20px 0;
     padding: 20px;
+    background-color: rgba(0, 68, 136, 0.8);
     border-radius: 8px;
-    color: white;
+  }
+
+  .seccion-porteros h2 {
+    color: #FFD700;
+    text-align: center;
+    margin-bottom: 20px;
   }
 
   .porteros-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
   }
 
   .card-portero {
     width: 200px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
     background-color: white;
-    color: black;
-    text-align: center;
-    padding: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+
+  .card-portero:hover {
+    transform: translateY(-5px);
   }
 
   .card-portero img {
     width: 100%;
-    border-radius: 8px;
+    height: 200px;
+    object-fit: cover;
   }
 
   .info-portero {
-    margin-top: 10px;
+    padding: 15px;
+    background-color: #004488;
+    color: white;
   }
 
-  .info-portero h2 {
+  .info-portero h3 {
+    margin: 0 0 10px 0;
     font-size: 18px;
-    margin-bottom: 10px;
   }
 
   .estado {
-    font-size: 16px;
-    margin-bottom: 10px;
+    font-size: 14px;
     font-weight: bold;
+    margin-bottom: 10px;
   }
 
   .titular {
-    color: green;
+    color: #FFD700;
   }
 
   .suplente {
-    color: red;
+    color: #FF4136;
   }
 
   .btn {
-    background-color: #004488;
-    color: white;
-    padding: 5px 10px;
+    background-color: #FFD700;
+    color: #004488;
     border: none;
+    padding: 8px 15px;
     border-radius: 5px;
     cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
   }
 
   .btn:hover {
-    background-color: #003366;
+    background-color: #FFA500;
   }
 
-  /* Sección de fondo desaturado en negro */
   .fondo-desaturado {
-    background: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente negro */
-    background-blend-mode: saturation;
-    height: 300px; /* Ajusta la altura según sea necesario */
-    margin-top: 20px; /* Espacio encima del fondo */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-shadow: 
-      -1px -1px 0 black,  
-      1px -1px 0 black,
-      -1px 1px 0 black,
-      1px 1px 0 black;
-    font-size: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .fondo-desaturado p {
+    font-size: 24px;
+    color: #FFD700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  @media (max-width: 768px) {
+    .cancha {
+      height: 400px;
+    }
+
+    .jugador {
+      width: 80px;
+      height: 80px;
+    }
+
+    .jugador a {
+      font-size: 12px;
+    }
+
+    .jugador .numero {
+      font-size: 10px;
+    }
+
+    .jugador img {
+      width: 80px;
+      height: 80px;
+      top: -80px;
+    }
   }
 </style>
+<body> <h1 class="custom-cursor">Texto con cursor personalizado</h1> <a href="#">Enlace con cursor personalizado</a> <button>Botón con cursor personalizado</button> </body>
