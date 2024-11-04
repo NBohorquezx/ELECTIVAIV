@@ -28,11 +28,11 @@ import Layout from "../layouts/Layout.astro";
       overflow: hidden;
       box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
     }
-    .header {
+    /* .header {
       background-color: #000;
       padding: 20px;
       text-align: center;
-    }
+    } */
     .content {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -101,7 +101,7 @@ import Layout from "../layouts/Layout.astro";
   <div class="container">
     <div class="resume">
       <div class="header">
-        <h1 class="text-4xl font-bold">MY RESUME</h1>
+        <h1 class="text-4xl font-bold">.</h1>
       </div>
       <div class="content">
         <div class="photo">
@@ -144,34 +144,108 @@ import Layout from "../layouts/Layout.astro";
           </div>
         </div>
         
-        <div class="position">
-          <h2 class="text-2xl font-bold mb-4">POSICIÓN EN EL CAMPO</h2>
-          <div class="field">
-            <div class="player-position" style="top: 60%; left: 50%;"></div>
+        <div className="position">
+          <h2 className="text-2xl font-bold mb-4">POSICIÓN EN EL CAMPO</h2>
+          <br>
+          <div className="field-container" style={{ 
+            width: '80px',
+            aspectRatio: '1.5/1',
+            position: 'relative',
+            marginBottom: '1rem'
+          }}>
+            <div className="field" style={{
+              width: '550px',
+              height: '200px',
+              border: '2px solid #00ccff',
+              position: 'relative',
+              backgroundColor: '#000000',
+              borderRadius: '4px'
+            }}>
+              {/* Penalty Area */}
+              <div style={{
+                position: 'absolute',
+                left: '0',
+                top: '100px',
+                transform: 'translateY(-50%)',
+                width: '50px',
+                height: '90px',
+                border: '2px solid #00ccff',
+                borderLeft: 'none'
+              }} />
+              <div style={{
+                position: 'absolute',
+                right: '0',
+                top: '100px',
+                transform: 'translateY(-50%)',
+                width: '50px',
+                height: '90px',
+                border: '2px solid #00ccff',
+                borderRight: 'none'
+              }} />
+              
+              {/* Center Circle */}
+              <div style={{
+                position: 'absolute',
+                left: '275px',
+                top: '100px',
+                transform: 'translate(-50%, -50%)',
+                width: '60px',
+                height: '60px',
+                border: '2px solid #00ccff',
+                borderRadius: '80px'
+              }} />
+              
+              {/* Center Line */}
+              <div style={{
+                position: 'absolute',
+                left: '275px',
+                top: '0',
+                width: '2px',
+                height: '199px',
+                backgroundColor: '#00ccff'
+              }} />
+              
+              {/* Player Position Dots */}
+              <div style={{
+                position: 'absolute',
+                left: '30px',
+                top: '100px',
+                width: '12px',
+                height: '12px',
+                backgroundColor: '#00ccff',
+                borderRadius: '50%',
+                transform: 'translate(-50%, -50%)'
+              }} />
+              
+            </div>
           </div>
-          <p class="mt-2">Winger or central forward</p>
+         
         </div>
         <div class="abilities">
           <h2 class="text-2xl font-bold mb-4">HABILIDADES</h2>
           <br>
+          
           <div class="ability-bar">
             <span class="w-24">control </span>
             {[...Array(9)].map((_, i) => (
               <div key={i} class="ability-dot"></div>
             ))}
           </div>
+          
           <div class="ability-bar">
             <span class="w-24">Regate</span>
             {[...Array(8)].map((_, i) => (
               <div key={i} class="ability-dot"></div>
             ))}
           </div>
+          
           <div class="ability-bar">
             <span class="w-24">Remate</span>
             {[...Array(7)].map((_, i) => (
               <div key={i} class="ability-dot"></div>
             ))}
           </div>
+          
           <div class="ability-bar">
             <span class="w-24">Aceleración
             </span>
