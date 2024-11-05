@@ -41,27 +41,56 @@ const jugadores = [
       </div>
     </div>
 
-    <div class="contenedor">  
-      <div class="seccion-porteros">
-        <h2>Porteros</h2>
-        <div class="porteros-container">
-          {jugadores.filter(jugador => jugador.posicion === 'portero').map((jugador) => (
-            <div class="card-portero">
-              <img src={jugador.imagen} alt={jugador.nombre} />
-              <div class="info-portero">
-                <h3>{jugador.nombre}</h3>
-                <p class={`estado ${jugador.titular ? 'titular' : 'suplente'}`}>
-                  {jugador.titular ? 'Titular' : 'Suplente'}
-                </p>
-                <button class="btn">Ver detalles</button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+    <div class="fondo-desaturado">
+      <h1>Selección Colombia - Alineación de reserva</h1>
+    </div>
+    
+ 
+    <section>
+      <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/davidopsina.jpg">
+      <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/alvaromontero.jpg">
+    </section>
 
       <div class="fondo-desaturado">
-        <p>Selección Colombia - Alineación Titular</p>
+        <p>Selección Colombia - Porteros en la reserva</p>
+      </div>
+    </div>
+
+    <section>
+      <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/deivermachado.jpg">
+      <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/jlucumi.jpg">
+      <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/santiagoarias.jpg">
+      <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/jmina.jpg">
+    </section>
+
+      <div class="fondo-desaturado">
+        <p>Selección Colombia - Defensas en la reserva</p>
+      </div>
+    </div>
+
+    <section>
+      <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/jcarrascal.jpg">
+      <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/juanquintero.jpg">
+      <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/kevincasta%C3%B1o.jpg">
+      <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/matheusuribe.jpg">
+      <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/yaserasprilla.jpg">
+    </section>
+
+      <div class="fondo-desaturado">
+        <p>Selección Colombia - Mediocampistas en la reserva</p>
+      </div>
+    </div>
+
+
+    <section>
+      <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/siniestra.jpg">
+      <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/borja.jpg">
+      <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/jhonjader.jpg">
+      <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/santosborre.jpg">
+    </section>
+
+      <div class="fondo-desaturado">
+        <p>Selección Colombia - Delanteros en la reserva</p>
       </div>
     </div>
   </main>
@@ -83,28 +112,42 @@ const jugadores = [
    .custom-cursor:active { 
     cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), auto; /* Mantener el cursor al hacer clic */ }
 
-  /* .header {
-    text-align: center; */
-    /* padding: 15px;
-    background: url(img/image1.png) no-repeat center center;
-    background-size: cover;
-    color: #FFD700;
-    font-size: 26px;
-    text-shadow: 
-      -1px -1px 0 black,  
-      1px -1px 0 black,
-      -1px 1px 0 black,
-      1px 1px 0 black;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 20;
-  } */
-
   main {
     margin-top: 80px;
     padding: 20px;
   }
+
+  section {
+  display: flex;
+  width: 600px;
+  height: 430px;
+  position: auto;
+  top: 50%;
+  left: 150px;
+  transform: translate(100%, 10%);
+}
+
+  section img {
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .8;
+    transition: .5s ease;
+  }
+
+  section img:hover{
+    cursor: crosshair;
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120%);
+  }
+
+  .fondo-desaturado h1 {
+  font-size: 2.5em; /* Ajusta el tamaño según prefieras */
+  font-weight: bold;
+  color: #FFD700; /* Cambia el color según tus necesidades */
+}
+
 
   .contenedor {
     width: 90%;

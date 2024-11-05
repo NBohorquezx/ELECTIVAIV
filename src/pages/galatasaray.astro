@@ -2,157 +2,153 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<style>
+<Layout title="Atlas F.C.">
+  <style>
     body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: url(https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/fondo_index.png) no-repeat center center fixed;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    justify-content: space-between;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      cursor: url('https://spar2099.sirv.com/la_seleccion/guayo2.png') 16 16, auto;
   }
-
-  .contenedor {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 100px auto;
-    width: 100%;
-    max-width: 1200px;
-  }
-
-  h1 {
-    color: #fff;
-    font-size: 40px;
-    margin-bottom: 30px;
-  }
-
-  .equipo-atlas {
-    width: 300px;
-    height: 300px;
-    background-color: rgba(255, 255, 255, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 75px;
-    border-radius: 10px;
-    border: 5px solid #004488;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  }
-
-  .equipo-atlas img {
-    width: 100%;            
-    height: 100%;          
-    object-fit: contain;   
-    background-color: white; 
-    border-radius: 10px;     
-    padding: 10px;           
-}
-
-
-  .equipos {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 30px;
-  }
-
-  .equipo {
-    width: 150px;
-    height: 150px;
-    background-color: rgba(255, 255, 255, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    border: 2px solid #004488;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  }
-
-  .equipo img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 5px;
-  }
-
-  .texto {
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 20px;
-  border-radius: 10px;
-  width: 100%;           
-  max-width: 900px;       
-  height: 400px;          
-  overflow-y: auto;       
-  box-shadow: 0 0 10px rgba(255, 250, 250, 0.5);
-  text-align: justify;
-}
-
-</style>
-
-<Layout title="Nueva Pestaña">
-  <main>
-    <div class="contenedor">
-
-      <h1>GALATASARAY</h1>
-
-
-      <div class="equipo-atlas">
-        <a href="galatasaray">
+  a { cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), pointer; /* Cambia el cursor sobre enlaces */ } 
+  button { cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), pointer; /* Cambia el cursor sobre botones */ } 
+  .custom-cursor { cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), auto; /* Cambia el cursor en elementos específicos */ } /* Mantener el cursor al hacer clic */ 
+  a:active,
+   button:active, 
+   .custom-cursor:active { 
+    cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), auto; /* Mantener el cursor al hacer clic */ }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .resume {
+      background-color: #111;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+    /* .header {
+      background-color: #000;
+      padding: 20px;
+      text-align: center;
+    } */
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+    .logo, .about-club, .achievements, .identity {
+      background-color: #222;
+      border-radius: 5px;
+      padding: 15px;
+    }
+    .logo img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 5px;
+    }
+    .ability-bar {
+      display: flex;
+      margin-bottom: 10px;
+    }
+    .ability-dot {
+      width: 15px;
+      height: 15px;
+      background-color: #00ccff;
+      border-radius: 50%;
+      margin-right: 5px;
+    }
+    .history {
+      background-color: #222;
+      border-radius: 5px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+  </style>
+<button 
+onclick="history.back()" 
+class="fixed top-[120px] right-[40px] bg-black text-white hover:bg-white hover:text-black px-3 py-2 rounded-md transition-colors duration-300 flex items-center gap-2"
+style="z-index: 1000;"
+>
+<svg 
+  xmlns="http://www.w3.org/2000/svg" 
+  width="16" 
+  height="16" 
+  viewBox="0 0 24 24" 
+  fill="none" 
+  stroke="currentColor" 
+  stroke-width="2" 
+  stroke-linecap="round" 
+  stroke-linejoin="round"
+>
+  <path d="M19 12H5M12 19l-7-7 7-7"/>
+</svg>
+Volver
+</button>
+  <div class="container">
+    <div class="resume">
+      <div class="header">
+        <h1 class="text-4xl font-bold">ATLAS F.C</h1>
+      </div>
+      <div class="content">
+        <div class="logo">
           <img
-            src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/Galatasaray.png"
-            alt="galatasaray"
+            src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/Galatasaray%20(2)%20(1).png"
+            alt="atlas"
           />
-        </a>
-      </div>
-      <div class="equipos">
-        <div class="equipo">
-          <a href="equipo">
-            <img
-              src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/images%20(1).png"
-              alt="Equipo 1"
-            />
-          </a>
         </div>
-        <div class="equipo">
-          <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/S%C3%BCper_Lig_logo.svg.png" alt="Equipo 2" />
+        <div class="about-club">
+          <h2 class="text-2xl font-bold mb-4">SOBRE EL CLUB</h2>
+          <p>FUNDACIÓN: 1905</p>
+          <p>UBICACIÓN: Estambul, Turquía</p>
+          <p>ESTADIO: Nef Stadium (anteriormente Türk Telekom Arena)</p>
+          <p>APODO: Cim Bom</p>
+          <h2 class="text-2xl font-bold mb-4">HISTORIA DEL CLUB</h2>
+          <p>  Fundado en 1905, Galatasaray es uno de los clubes más antiguos y exitosos de Turquía. Su mayor logro internacional llegó en 2000 cuando ganó la Copa de la UEFA y la Supercopa de Europa, convirtiéndose en el primer club turco en alcanzar tales trofeos. </p>
+          <p>Galatasaray no solo es conocido por sus victorias, sino también por su fiel afición y su histórica rivalidad con Fenerbahçe y Beşiktaş, formando una tríada dominante en el fútbol turco​</p>
+ 
         </div>
-      </div>
-
-
-      <div class="texto">
-        <h1 class="text-center my-4 font-bold" style="font-size: 26px; color: black;">
-          Fundación y Primeros Años (1905-1959)
-        </h1>        
-        <p>
-          El Galatasaray S.K. fue fundado en 1905 por Ali Sami Yen, un estudiante del Liceo de Galatasaray en Estambul. En sus primeros años, el equipo participaba en competiciones locales en Estambul, enfrentando a clubes griegos e ingleses presentes en la región. El club rápidamente ganó notoriedad al proclamarse campeón de la Liga de Estambul en 1909, cimentando su posición en el fútbol turco.
-        </p>
-        <h1 class="text-center my-4 font-bold" style="font-size: 26px; color: black;">
-          Dominio Nacional (1959-2000)
-        </h1>        
-        <p>
-          Cuando se creó la Süper Lig en 1959, Galatasaray fue uno de los clubes fundadores. Tras algunos subcampeonatos, el club consiguió su primer título de liga nacional en 1962 y al año siguiente ganó su primera Copa de Turquía, marcando el inicio de una era de éxitos nacionales. Durante esta fase, Galatasaray consolidó su supremacía con jugadores icónicos como Metin Oktay, uno de los mayores goleadores del club.
-        </p>
-        <h1 class="text-center my-4 font-bold" style="font-size: 26px; color: black;">
-          Éxito Europeo (2000)
-        </h1>        
-        <p>
-          El mayor logro internacional de Galatasaray ocurrió en 2000, cuando se convirtió en el primer equipo turco en ganar la Copa UEFA (hoy Europa League), al derrotar al Arsenal en la final. Ese mismo año, también levantaron la Supercopa de la UEFA tras vencer al Real Madrid, consolidándose como un referente en el fútbol europeo y ganándose el apodo de "Avrupa Fatihi" (Conquistadores de Europa).
-        </p>
-        <h1 class="text-center my-4 font-bold" style="font-size: 26px; color: black;">
-          Cambios e Innovación (2011-Presente)
-        </h1>        
-        <p>
-          En 2011, el club abandonó su icónico estadio Ali Sami Yen, que había sido su hogar desde 1964, para mudarse al moderno Türk Telekom Arena. Esta transición reflejó la ambición del Galatasaray por mantenerse entre los grandes clubes europeos. Desde entonces, ha seguido acumulando títulos nacionales y se ha convertido en el equipo más laureado de Turquía, con 22 títulos de liga y 18 Copas de Turquía hasta la actualidad.
-        </p>       
-        
+        <div class="achievements">
+          <h2 class="text-2xl font-bold mb-4">LOGROS</h2>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">22 veces</span>
+            <span>Superliga Turca</span>
+          </div>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;"> 2000</span>
+            <span>Copa de la UEFA</span>
+          </div>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;"> 2000</span>
+            <span>Super copa de la UEFA</span>
+          </div>
+        </div>
+        <div class="identity">
+          <h2 class="text-2xl font-bold mb-4">IDENTIDAD DEL EQUIPO</h2>
+          <div class="ability-bar">
+            <span class="w-24">Tradición</span>
+            {[...Array(9)].map((_, i) => (
+              <div class="ability-dot"></div>
+            ))}
+          </div>
+          <div class="ability-bar">
+            <span class="w-24">Cantera</span>
+            {[...Array(8)].map((_, i) => (
+              <div class="ability-dot"></div>
+            ))}
+          </div>
+          <div class="ability-bar">
+            <span class="w-24">Afición</span>
+            {[...Array(10)].map((_, i) => (
+              <div class="ability-dot"></div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
-  </main>
-
-  <footer class="footer">
-    <p>© 2024 Tu Empresa. Todos los derechos reservados.</p>
-  </footer>
+  </div>
 </Layout>

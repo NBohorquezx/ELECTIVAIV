@@ -1,137 +1,294 @@
 ---
 import Layout from "../layouts/Layout.astro";
 ---
-
-<style>
-  body {
+<Layout title="C.vargas">
+  <style>
+    body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: url(img/fondo_jugador.png) no-repeat center center fixed;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      cursor: url('https://spar2099.sirv.com/la_seleccion/guayo2.png') 16 16, auto;
   }
+  a { cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), pointer; /* Cambia el cursor sobre enlaces */ } 
+  button { cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), pointer; /* Cambia el cursor sobre botones */ } 
+  .custom-cursor { cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), auto; /* Cambia el cursor en elementos específicos */ } /* Mantener el cursor al hacer clic */ 
+  a:active,
+   button:active, 
+   .custom-cursor:active { 
+    cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), auto; /* Mantener el cursor al hacer clic */ }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .resume {
+      background-color: #111;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
 
-  .contenedor {
-    width: 66%;
-    margin: 20px auto;
-    background-color: rgba(0, 0, 0, 0.7);
-    border: 5px solid #004488;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    position: relative;
-    padding: 20px;
-    flex: 1;
-    padding-bottom: 10px;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-gap: 20px;
-  }
-
-  .texto {
-    grid-column: 1 / 2;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 40px;
-  }
-
-  .foto {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    overflow: hidden; /* Importante para que la imagen no sobresalga del contenedor */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 75%; /* Asegura que el contenedor ocupe toda la altura asignada */
-  }
-
-  .foto img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Para que la imagen cubra todo el contenedor */
-  }
-
-  .equipos {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-    display: flex;
-    gap: 10px;
-  }
-
-  .equipos .equipo {
-    flex: 1;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 10px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .equipos .equipo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-  }
-</style>
-
-<Layout title="Nueva Pestaña">
-  <main>
-    <div class="contenedor">
-      <!-- Sección de Texto -->
-      <div class="texto">
-        <h1>Bienvenido a la Nueva Pestaña</h1>
-        <p>
-          James Rodríguez, nacido el 12 de julio de 1991 en Cúcuta, Colombia, es uno de los futbolistas más emblemáticos de su país. Desde muy joven, mostró un talento excepcional que lo llevó a destacarse en el fútbol profesional. Su carrera comenzó en el Envigado F.C., donde debutó en 2006 a la edad de 14 años. Su habilidad y visión de juego rápidamente llamaron la atención de clubes internacionales.
-        </p>
-        <br><br>
-        <p>
-          En 2008, James se trasladó a Argentina para unirse al Club Atlético Banfield. Su desempeño en el equipo argentino fue sobresaliente, ayudando a Banfield a ganar su primer título de liga en 2009. Este éxito le abrió las puertas a Europa, y en 2010 se unió al FC Porto de Portugal. Durante su tiempo en Porto, James ganó varios títulos de liga y se consolidó como uno de los mejores jugadores jóvenes del continente.
-        </p>
-        <p>
-          En el Real Madrid, James continuó demostrando su talento, aunque su tiempo en el club estuvo marcado por altibajos debido a lesiones y cambios en la dirección técnica. A pesar de estos desafíos, contribuyó significativamente a los éxitos del equipo, incluyendo la conquista de la Liga de Campeones de la UEFA en 2016 y 2017. Posteriormente, tuvo periodos de préstamo en el Bayern Múnich, donde también dejó una marca positiva.
-        </p>
-        <br><br>
-        <p>
-          En 2020, James se unió al Everton FC en la Premier League, donde se reencontró con el entrenador Carlo Ancelotti. Su tiempo en Inglaterra fue breve pero mostró destellos de su calidad. Luego, en 2021, se trasladó a Al Rayyan en Qatar, y más tarde a Olympiakos en Grecia, antes de unirse al São Paulo FC en Brasil en 2023. En cada uno de estos equipos, James ha demostrado su capacidad para adaptarse y seguir siendo un jugador influyente.
-        </p>
-        <p>
-          
-        </p>
-        <br><br>
-        <p>
-          En la Selección Colombia, James ha sido un pilar fundamental desde su debut en 2011. Ha participado en múltiples Copas América y Mundiales, siendo siempre una figura clave en el equipo. En la Copa América 2024, James fue nombrado el mejor jugador del torneo, superando el récord de asistencias en una sola edición y llevando a Colombia a la final, donde obtuvieron el subcampeonato.
-        </p>
-        <p>
-          A lo largo de su carrera, James ha enfrentado numerosos desafíos, incluyendo lesiones y cambios de equipo, pero su talento y determinación lo han mantenido en la élite del fútbol mundial. Su habilidad para crear oportunidades de gol, su precisión en los pases y su capacidad para anotar desde fuera del área lo han convertido en uno de los jugadores más completos de su generación.
-        </p>
-        <!-- Más texto si es necesario -->
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+    .about-me, .abilities, .position, .teams {
+      background-color: #222;
+      border-radius: 5px;
+      padding: 15px;
+    }
+    .photo {
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+      border-radius: 5px;
+      margin: 0px auto;
+      transform: translateX(7%); /* Desplazo la imagen 10% a la derecha */
+    }
+    .photo img {
+      width: 170%; /* Hago la imagen más grande */
+      height: 170%; /* Hago la imagen más grande */
+      object-fit: cover;
+    }
+    .ability-bar {
+      display: flex;
+      margin-bottom: 10px;
+    }
+    .ability-dot {
+      width: 15px;
+      height: 15px;
+      background-color: #00ccff;
+      border-radius: 50%;
+      margin-right: 5px;
+    }
+    .field {
+      width: 100%;
+      height: 150px;
+      border: 2px solid #00ccff;
+      position: relative;
+    }
+    .player-position {
+      width: 20px;
+      height: 20px;
+      background-color: #00ccff;
+      border-radius: 50%;
+      position: absolute;
+    }
+    .history {
+      background-color: #222;
+      border-radius: 5px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    .equipos {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+      display: flex;
+      gap: 40px; /* Ajusto la distancia entre las imágenes */
+      justify-content: center; /* Centrar las imágenes */
+      width: 70%; /* Hago la imagen más grande */
+      height: 80%; /* Hago la imagen más grande */
+      transform: translateX(25%); /* Desplazo la imagen 10% a la derecha */
+      margin-top: 70px;
+    }
+  </style>
+  <div class="container">
+    <div class="resume">
+      <div class="header">
+        <h1 class="text-4xl font-bold">.</h1>
       </div>
-
-      <!-- Sección de Foto -->
-      <div class="foto">
-        <img src="img/j_rodriguez.png" alt="Foto del jugador" />
-      </div>
-
-      <!-- Sección de Equipos -->
-      <div class="equipos">
-        <div class="equipo">
-          <a href="saopaulo">
-            <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/Brasao_do_Sao_Paulo_Futebol_Clube.svg%20(1).png" alt="saopaulo" />
-          </a>
+      <div class="content">
+        <div class="photo">
+          <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/j_rodriguez.png" alt="Player Photo" />
+        </div>
+        <div class="about-me">
+          <h2 class="text-2xl font-bold mb-4">
+            ACERCA DE MÍ
+          </h2>
+          <p>LUGAR DE NACIMIENTO: Cucuta-Colombia</p>
+          <p>FECHA DE NACIMIENTO: 12-07-1991</p>
+          <p>EDAD: 33</p>
+          <p>ALTURA: 1.81 cm</p>
+          <p>PIERNA HABIL: Pierna izquierda</p>
+        </div>
+        <div class="equipos">
+          <div class="equipo">
+            <a href="saopaulo">
+              <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/Brasao_do_Sao_Paulo_Futebol_Clube.svg%20(1).png" alt="saopaulo" />
+            </a>
+          </div>
+          <div class="equipo">
+            <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/Campeonato-Brasileiro-S%C3%A9rie-A-logo.png" alt="Equipo 2" />
+          </div>
+        </div>
+        <div class="teams">
+          <h2 class="text-2xl font-bold mb-4">EQUIPOS ANTERIORES</h2>
+          <br>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">2006-2008</span>
+            <span>Envigado F.C </span>
+          </div>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">2008-2010</span>
+            <span>C.A Banfield</span>
+          </div>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">2010-2013</span>
+            <span>F.C Porto</span>
+          </div>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">2013-2014</span>
+            <span>A.S Monaco</span>
+          </div>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">2014-2020</span>
+            <span>Real Madrid C.F</span>
+          </div>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">2020-2021</span>
+            <span>Everton F.C</span>
+          </div>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">2021-2022</span>
+            <span>Al Rayyan S.C</span>
+          </div>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">2022-2023</span>
+            <span>Olympiakos F.C</span>
+          </div>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">2023-Presente</span>
+            <span>Sao Paulo F.C</span>
+          </div>
+        </div>
+        
+        <div className="position">
+          <h2 className="text-2xl font-bold mb-4">POSICIÓN EN EL CAMPO</h2>
+          <br>
+          <div className="field-container" style={{ 
+            width: '80px',
+            aspectRatio: '1.5/1',
+            position: 'relative',
+            marginBottom: '1rem'
+          }}>
+            <div className="field" style={{
+              width: '550px',
+              height: '200px',
+              border: '2px solid #00ccff',
+              position: 'relative',
+              backgroundColor: '#000000',
+              borderRadius: '4px'
+            }}>
+              {/* Penalty Area */}
+              <div style={{
+                position: 'absolute',
+                left: '0',
+                top: '100px',
+                transform: 'translateY(-50%)',
+                width: '50px',
+                height: '90px',
+                border: '2px solid #00ccff',
+                borderLeft: 'none'
+              }} />
+              <div style={{
+                position: 'absolute',
+                right: '0',
+                top: '100px',
+                transform: 'translateY(-50%)',
+                width: '50px',
+                height: '90px',
+                border: '2px solid #00ccff',
+                borderRight: 'none'
+              }} />
+              
+              {/* Center Circle */}
+              <div style={{
+                position: 'absolute',
+                left: '275px',
+                top: '100px',
+                transform: 'translate(-50%, -50%)',
+                width: '60px',
+                height: '60px',
+                border: '2px solid #00ccff',
+                borderRadius: '80px'
+              }} />
+              
+              {/* Center Line */}
+              <div style={{
+                position: 'absolute',
+                left: '275px',
+                top: '0',
+                width: '2px',
+                height: '199px',
+                backgroundColor: '#00ccff'
+              }} />
+              
+              {/* Player Position Dots */}
+              <div style={{
+                position: 'absolute',
+                left: '30px',
+                top: '100px',
+                width: '12px',
+                height: '12px',
+                backgroundColor: '#00ccff',
+                borderRadius: '50%',
+                transform: 'translate(-50%, -50%)'
+              }} />
+              
+            </div>
+          </div>
+         
+        </div>
+        <div class="abilities">
+          <h2 class="text-2xl font-bold mb-4">HABILIDADES</h2>
+          <br>
           
+          <div class="ability-bar">
+            <span class="w-24">control </span>
+            {[...Array(9)].map((_, i) => (
+              <div key={i} class="ability-dot"></div>
+            ))}
+          </div>
+          
+          <div class="ability-bar">
+            <span class="w-24">Regate</span>
+            {[...Array(8)].map((_, i) => (
+              <div key={i} class="ability-dot"></div>
+            ))}
+          </div>
+          
+          <div class="ability-bar">
+            <span class="w-24">Remate</span>
+            {[...Array(7)].map((_, i) => (
+              <div key={i} class="ability-dot"></div>
+            ))}
+          </div>
+          
+          <div class="ability-bar">
+            <span class="w-24">Aceleración
+            </span>
+            {[...Array(6)].map((_, i) => (
+              <div key={i} class="ability-dot"></div>
+            ))}
+          </div>
         </div>
-        <div class="equipo">
-          <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/Campeonato-Brasileiro-S%C3%A9rie-A-logo.png" alt="Equipo 2" />
-        </div>
+      </div>
+      <div class="history">
+        <h2 class="text-2xl font-bold mb-4">HISTORIA DEL JUGADOR</h2>
+        <p class="mb-4">
+          James Rodríguez, nacido el 12 de julio de 1991 en Cúcuta, Colombia, es uno de los futbolistas más emblemáticos de su país. Desde muy joven, mostró un talento excepcional que lo llevó a destacarse en el fútbol profesional. Su carrera comenzó en el Envigado F.C., donde debutó en 2006 a la edad de 14 años. Su habilidad y visión de juego rápidamente llamaron la atención de clubes internacionales. En 2008, James se trasladó a Argentina para unirse al Club Atlético Banfield. Su desempeño en el equipo argentino fue sobresaliente, ayudando a Banfield a ganar su primer título de liga en 2009. Este éxito le abrió las puertas a Europa, y en 2010 se unió al FC Porto de Portugal. Durante su tiempo en Porto, James ganó varios títulos de liga y se consolidó como uno de los mejores jugadores jóvenes del continente. </p>
+        <p class="mb-4">
+          En el Real Madrid, James continuó demostrando su talento, aunque su tiempo en el club estuvo marcado por altibajos debido a lesiones y cambios en la dirección técnica. A pesar de estos desafíos, contribuyó significativamente a los éxitos del equipo, incluyendo la conquista de la Liga de Campeones de la UEFA en 2016 y 2017. Posteriormente, tuvo periodos de préstamo en el Bayern Múnich, donde también dejó una marca positiva. En 2020, James se unió al Everton FC en la Premier League, donde se reencontró con el entrenador Carlo Ancelotti. Su tiempo en Inglaterra fue breve pero mostró destellos de su calidad. Luego, en 2021, se trasladó a Al Rayyan en Qatar, y más tarde a Olympiakos en Grecia, antes de unirse al São Paulo FC en Brasil en 2023. En cada uno de estos equipos, James ha demostrado su capacidad para adaptarse y seguir siendo un jugador influyente. </p>
+        <p class="mb-4">
+          En la Selección Colombia, James ha sido un pilar fundamental desde su debut en 2011. Ha participado en múltiples Copas América y Mundiales, siendo siempre una figura clave en el equipo. En la Copa América 2024, James fue nombrado el mejor jugador del torneo, superando el récord de asistencias en una sola edición y llevando a Colombia a la final, donde obtuvieron el subcampeonato.  </p>
+        </p>
+        <p>
+          A lo largo de su carrera, James ha enfrentado numerosos desafíos, incluyendo lesiones y cambios de equipo, pero su talento y determinación lo han mantenido en la élite del fútbol mundial. Su habilidad para crear oportunidades de gol, su precisión en los pases y su capacidad para anotar desde fuera del área lo han convertido en uno de los jugadores más completos de su generación.</p>
+        </p>
       </div>
     </div>
-  </main>
-  <footer class="footer">
-    <p>© 2024 Tu Empresa. Todos los derechos reservados.</p>
-  </footer>
+  </div>
 </Layout>

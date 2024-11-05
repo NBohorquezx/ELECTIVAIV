@@ -2,160 +2,149 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<style>
+<Layout title="Atlas F.C.">
+  <style>
     body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: url(https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/fondo_index.png) no-repeat center center fixed;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    justify-content: space-between;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      cursor: url('https://spar2099.sirv.com/la_seleccion/guayo2.png') 16 16, auto;
   }
-
-  .contenedor {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 100px auto;
-    width: 100%;
-    max-width: 1200px;
-  }
-
-  h1 {
-    color: #fff;
-    font-size: 40px;
-    margin-bottom: 30px;
-  }
-
-  .equipo-atlas {
-    width: 300px;
-    height: 300px;
-    background-color: rgba(255, 255, 255, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 30px;
-    border-radius: 10px;
-    border: 5px solid #004488;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  }
-
-  .equipo-atlas img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 5px;
-  }
-
-  .equipos {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 30px;
-  }
-
-  .equipo {
-    width: 150px;
-    height: 150px;
-    background-color: rgba(255, 255, 255, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    border: 2px solid #004488;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  }
-
-  .equipo img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 5px;
-  }
-
-  .texto {
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 20px;
-  border-radius: 10px;
-  width: 100%;           
-  max-width: 900px;       
-  height: 400px;          
-  overflow-y: auto;       
-  box-shadow: 0 0 10px rgba(255, 250, 250, 0.5);
-  text-align: justify;
-}
-
-</style>
-
-<Layout title="Nueva Pestaña">
-  <main>
-    <div class="contenedor">
-
-      <h1>FLUMINENSE F.C </h1>
-
-
-      <div class="equipo-atlas">
-        <a href="fluminense">
+  a { cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), pointer; /* Cambia el cursor sobre enlaces */ } 
+  button { cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), pointer; /* Cambia el cursor sobre botones */ } 
+  .custom-cursor { cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), auto; /* Cambia el cursor en elementos específicos */ } /* Mantener el cursor al hacer clic */ 
+  a:active,
+   button:active, 
+   .custom-cursor:active { 
+    cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), auto; /* Mantener el cursor al hacer clic */ }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .resume {
+      background-color: #111;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+    /* .header {
+      background-color: #000;
+      padding: 20px;
+      text-align: center;
+    } */
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+    .logo, .about-club, .achievements, .identity {
+      background-color: #222;
+      border-radius: 5px;
+      padding: 15px;
+    }
+    .logo img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 5px;
+    }
+    .ability-bar {
+      display: flex;
+      margin-bottom: 10px;
+    }
+    .ability-dot {
+      width: 15px;
+      height: 15px;
+      background-color: #00ccff;
+      border-radius: 50%;
+      margin-right: 5px;
+    }
+    .history {
+      background-color: #222;
+      border-radius: 5px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+  </style>
+<button 
+onclick="history.back()" 
+class="fixed top-[120px] right-[40px] bg-black text-white hover:bg-white hover:text-black px-3 py-2 rounded-md transition-colors duration-300 flex items-center gap-2"
+style="z-index: 1000;"
+>
+<svg 
+  xmlns="http://www.w3.org/2000/svg" 
+  width="16" 
+  height="16" 
+  viewBox="0 0 24 24" 
+  fill="none" 
+  stroke="currentColor" 
+  stroke-width="2" 
+  stroke-linecap="round" 
+  stroke-linejoin="round"
+>
+  <path d="M19 12H5M12 19l-7-7 7-7"/>
+</svg>
+Volver
+</button>
+  <div class="container">
+    <div class="resume">
+      <div class="header">
+        <h1 class="text-4xl font-bold">ATLAS F.C</h1>
+      </div>
+      <div class="content">
+        <div class="logo">
           <img
-            src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/Fluminense%20(1).png"
-            alt="fluminense"
+            src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/Fluminense.png"
+            alt="atlas"
           />
-        </a>
-      </div>
-      <div class="equipos">
-        <div class="equipo">
-          <a href="equipo">
-            <img
-              src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/audaz-vibrante-bandera-brasilena-movimiento_1026943-555.jpg"
-              alt="Equipo 1"
-            />
-          </a>
         </div>
-        <div class="equipo">
-          <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/Campeonato-Brasileiro-S%C3%A9rie-A-logo.png" alt="Equipo 2" />
+        <div class="about-club">
+          <h2 class="text-2xl font-bold mb-4">SOBRE EL CLUB</h2>
+          <p>FUNDACIÓN: 21 de julio de 1902</p>
+          <p>UBICACIÓN: Río de Janeiro, Brasil</p>
+          <p>ESTADIO: Maracanã (compartido), Estadio Laranjeiras (histórico)</p>
+          <p>APODO: Tricolor</p>
+          <h2 class="text-2xl font-bold mb-4">HISTORIA DEL CLUB</h2>
+          <p> Fluminense se fundó en 1902 como uno de los primeros clubes en Brasil, convirtiéndose en pionero del fútbol en el país. Desde sus inicios, estableció una rivalidad intensa con Flamengo, otro club de Río. </p>
+          <p>Durante los años 80, Fluminense vivió una "Edad de Oro", destacándose en campeonatos nacionales e internacionales. La institución también ha sido clave en la formación de jugadores de talento, muchos de los cuales han pasado a representar a Brasil en competencias internacionales​</p>
+ 
         </div>
-      </div>
-
-
-      <div class="texto">
-        <h1 class="text-center my-4 font-bold" style="font-size: 26px; color: black;">
-          Fundación y Primeros Años (1902-1920)
-        </h1>        
-        <p>
-          El Fluminense Football Club fue fundado el 21 de julio de 1902 por Oscar Cox con el objetivo de difundir el fútbol en Brasil. En 1906, se proclamó campeón del primer Campeonato Carioca, lo que marcó el inicio de su relevancia en el fútbol brasileño. Durante sus primeras décadas, el club aportó jugadores clave a la selección nacional, destacando Preguinho, quien anotó el primer gol de Brasil en una Copa del Mundo.
-        </p>
-        <h1 class="text-center my-4 font-bold" style="font-size: 26px; color: black;">
-          Décadas de 1940 y 1950: Era Dorada
-        </h1>        
-        <p>
-          Durante estas décadas, Fluminense vivió una etapa de gloria al conquistar múltiples títulos del Campeonato Carioca. En 1952, ganó la Copa Rio, un torneo intercontinental que algunos consideran un precursor no oficial del Mundial de Clubes. Estos logros consolidaron al club como una potencia nacional e internacional.
-        </p>
-        <h1 class="text-center my-4 font-bold" style="font-size: 26px; color: black;">
-          Décadas de 1970 y 1980: La "Máquina Tricolor"
-        </h1>        
-        <p>
-          En los años 70, Fluminense formó un equipo histórico conocido como la "Máquina Tricolor", compuesto por estrellas como Rivellino y Paulo César Caju. Esta generación ganó varios campeonatos estatales y la primera versión oficial del Campeonato Brasileño en 1970. En 1984, bajo la dirección técnica de Carlos Alberto Parreira, el club volvió a brillar al ganar otro Brasileirão, liderado por jugadores como Romerito y Assis.
-        </p>
-        <h1 class="text-center my-4 font-bold" style="font-size: 26px; color: black;">
-          Décadas de 1990 y 2000: Altibajos y Resurgimiento
-        </h1>        
-        <p>
-          A pesar de haber descendido en los años 90, el Fluminense resurgió en los 2000 con logros importantes. En 2007, conquistó la Copa de Brasil, y en 2008 llegó a la final de la Copa Libertadores. Además, fue campeón del Brasileirão en 2010 y 2012, con figuras destacadas como Fred y Deco.
-        </p>       
-        <h1 class="text-center my-4 font-bold" style="font-size: 26px; color: black;">
-          Últimos Años y Desarrollo de Talento Joven
-        </h1>        
-        <p>
-          En los años recientes, el club se ha enfocado en desarrollar jóvenes talentos, lanzando las carreras de jugadores como Richarlison y Pedro. A pesar de enfrentar desafíos financieros, Fluminense ha seguido siendo competitivo, logrando el Campeonato Carioca en 2022 y renovando la pasión de sus seguidores.
-        </p>      
-
+        <div class="achievements">
+          <h2 class="text-2xl font-bold mb-4">LOGROS</h2>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">1970, 1984, 2010, 2012</span>
+            <span>Campeonato Brasileño</span>
+          </div>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;"> 2007</span>
+            <span>Copa de Brasil </span>
+          </div>
+        </div>
+        <div class="identity">
+          <h2 class="text-2xl font-bold mb-4">IDENTIDAD DEL EQUIPO</h2>
+          <div class="ability-bar">
+            <span class="w-24">Tradición</span>
+            {[...Array(9)].map((_, i) => (
+              <div class="ability-dot"></div>
+            ))}
+          </div>
+          <div class="ability-bar">
+            <span class="w-24">Cantera</span>
+            {[...Array(8)].map((_, i) => (
+              <div class="ability-dot"></div>
+            ))}
+          </div>
+          <div class="ability-bar">
+            <span class="w-24">Afición</span>
+            {[...Array(10)].map((_, i) => (
+              <div class="ability-dot"></div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
-  </main>
-
-  <footer class="footer">
-    <p>© 2024 Tu Empresa. Todos los derechos reservados.</p>
-  </footer>
+  </div>
 </Layout>

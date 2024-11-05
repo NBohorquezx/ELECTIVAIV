@@ -1,135 +1,284 @@
 ---
 import Layout from "../layouts/Layout.astro";
 ---
-
-<style>
-  body {
+<Layout title="C.vargas">
+  <style>
+    body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: url(https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/fondo_index.png) no-repeat center center fixed;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    justify-content: space-between;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      cursor: url('https://spar2099.sirv.com/la_seleccion/guayo2.png') 16 16, auto;
   }
-  .contenedor {
-    width: 66%;
-    margin: 20px auto;
-    background-color: rgba(0, 0, 0, 0.7);
-    border: 5px solid #004488;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    position: relative;
-    padding: 20px;
-    flex: 1;
-    padding-bottom: 10px;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-gap: 20px;
-  }
+  a { cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), pointer; /* Cambia el cursor sobre enlaces */ } 
+  button { cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), pointer; /* Cambia el cursor sobre botones */ } 
+  .custom-cursor { cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), auto; /* Cambia el cursor en elementos específicos */ } /* Mantener el cursor al hacer clic */ 
+  a:active,
+   button:active, 
+   .custom-cursor:active { 
+    cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), auto; /* Mantener el cursor al hacer clic */ }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .resume {
+      background-color: #111;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
 
-  .texto {
-    grid-column: 1 / 2;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 40px;
-  }
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+    .about-me, .abilities, .position, .teams {
+      background-color: #222;
+      border-radius: 5px;
+      padding: 15px;
+    }
+    .photo {
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+      border-radius: 5px;
+      margin: 0 auto;
+      transform: translateX(7%); /* Desplazo la imagen 10% a la derecha */
+    }
+    .photo img {
+      width: 170%; /* Hago la imagen más grande */
+      height: 170%; /* Hago la imagen más grande */
+      object-fit: cover;
+    }
+    .ability-bar {
+      display: flex;
+      margin-bottom: 10px;
+    }
+    .ability-dot {
+      width: 15px;
+      height: 15px;
+      background-color: #00ccff;
+      border-radius: 50%;
+      margin-right: 5px;
+    }
+    .field {
+      width: 100%;
+      height: 150px;
+      border: 2px solid #00ccff;
+      position: relative;
+    }
+    .player-position {
+      width: 20px;
+      height: 20px;
+      background-color: #00ccff;
+      border-radius: 50%;
+      position: absolute;
+    }
+    .history {
+      background-color: #222;
+      border-radius: 5px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    .equipos {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+      display: flex;
+      gap: 10px; /* Ajusto la distancia entre las imágenes */
+      justify-content: center; /* Centrar las imágenes */
+      width: 70%; /* Hago la imagen más grande */
+      height: 80%; /* Hago la imagen más grande */
+      transform: translateX(25%); 
+    }
 
-  .foto {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    overflow: hidden; /* Importante para que la imagen no sobresalga del contenedor */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 75%; /* Asegura que el contenedor ocupe toda la altura asignada */
-  }
-
-  .foto img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Para que la imagen cubra todo el contenedor */
-  }
-
-  .equipos {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-    display: flex;
-    gap: 10px;
-  }
-
-  .equipos .equipo {
-    flex: 1;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 10px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .equipos .equipo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-  }
-</style>
-
-<Layout title="Nueva Pestaña">
-  <main>
-    <div class="contenedor">
-      <!-- Sección de Texto -->
-      <div class="texto">
-        <h1>Bienvenido a la Nueva Pestaña</h1>
-        <p>
-          Jhon Andrés Córdoba Copete, nacido el 11 de mayo de 1993 en Istmina, Chocó, es un destacado futbolista colombiano que se desempeña como delantero. Actualmente, juega para el FC Krasnodar en la Liga Premier de Rusia. Su carrera ha sido notable tanto a nivel de clubes como en la selección nacional de Colombia.
-        </p>
-        <br><br>
-        <p>
-          Córdoba comenzó su carrera profesional en el Envigado F.C., donde debutó en 2010. Su talento y capacidad goleadora rápidamente llamaron la atención, lo que le permitió dar el salto al fútbol internacional. En 2012, se unió a los Jaguares de Chiapas en México, donde continuó demostrando su valía como delantero.
-        </p>
-        <p>
-          Después de su paso por México, Córdoba se trasladó a Europa, donde jugó para varios clubes en España y Alemania. En España, tuvo estancias en el RCD Espanyol y el Granada CF, mientras que en Alemania jugó para el 1. FSV Mainz 05 y el FC Colonia. Su tiempo en Europa fue crucial para su desarrollo, enfrentándose a algunos de los mejores defensores del mundo y perfeccionando su juego.
-        </p>
-        <br><br>
-        <p>
-          En 2020, Córdoba se unió al Hertha Berlín en la Bundesliga, donde tuvo una temporada destacada antes de trasladarse al FC Krasnodar en 2021. En Rusia, ha continuado mostrando su capacidad goleadora, convirtiéndose en una pieza clave para su equipo. Su rendimiento en el FC Krasnodar ha sido impresionante, lo que le ha valido el reconocimiento tanto a nivel nacional como internacional.        </p>
-        <p>
-          A nivel internacional, Jhon Córdoba ha sido un miembro regular de la selección colombiana desde su debut en 2023. Su participación en la Copa América 2024 fue particularmente destacada, donde jugó un papel crucial en el ataque colombiano, ayudando a su equipo a alcanzar la final y obtener la medalla de plata. Su capacidad para marcar goles en momentos decisivos lo ha convertido en un jugador indispensable para la selección.        </p>
-        <br><br>
-        <p>
-          Prueba del commit nuevo 
-        </p>
-        <p>
-          Cosa del commit nuevo 
-        </p>
-        <!-- Más texto si es necesario -->
+    
+  </style>
+  <div class="container">
+    <div class="resume">
+      <div class="header">
+        <h1 class="text-4xl font-bold">.</h1>
       </div>
-
-      <!-- Sección de Foto -->
-      <div class="foto">
-        <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/j_cordoba.png" alt="Foto del jugador" />
-      </div>
-
-      <!-- Sección de Equipos -->
-      <div class="equipos">
-        <div class="equipo">
-          <a href="kranodar">
-            <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/Krasnodar.png" alt="kranodar" />
-          </a>
+      <div class="content">
+        <div class="photo">
+          <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/j_cordoba.png" alt="Player Photo" />
+        </div>
+        <div class="about-me">
+          <h2 class="text-2xl font-bold mb-4">
+            ACERCA DE MÍ
+          </h2>
+          <p>LUGAR DE NACIMIENTO: Istmina-Colombia</p>
+          <p>FECHA DE NACIMIENTO: 11-05-1993</p>
+          <p>EDAD: 31</p>
+          <p>ALTURA: 1.92 cm</p>
+          <p>PIERNA HABIL: Pierna derecha</p>
+        </div>
+        <div class="equipos">
+          <div class="kranodar">
+            <a href="kranodar">
+              <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/Krasnodar.png" alt="liverpool" />
+            </a>
+          </div>
+          <div class="equipo">
+            <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/Russian_Premier_League.svg.png" alt="Equipo 2" />
+          </div>
+        </div>
+        <div class="teams">
+          <h2 class="text-2xl font-bold mb-4">EQUIPOS ANTERIORES</h2>
+          <br>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">2010-2012</span>
+            <span>Envigado F.C</span>
+          </div>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">2012-2014</span>
+            <span>Jaguares de Chiapas</span>
+          </div>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">2014-2016</span>
+            <span>Queretaro F.C</span>
+          </div>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">2016-2017</span>
+            <span>Granada C.F</span>
+          </div>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">2017-2019</span>
+            <span>F.S.V Maguncia 05</span>
+          </div>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">2020-2022</span>
+            <span>F.C Colonia</span>
+          </div>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">2022-Presente</span>
+            <span>F.C Krasnodar</span>
+          </div>
+        </div>
+        
+        <div className="position">
+          <h2 className="text-2xl font-bold mb-4">POSICIÓN EN EL CAMPO</h2>
+          <br>
+          <div className="field-container" style={{ 
+            width: '80px',
+            aspectRatio: '1.5/1',
+            position: 'relative',
+            marginBottom: '1rem'
+          }}>
+            <div className="field" style={{
+              width: '550px',
+              height: '200px',
+              border: '2px solid #00ccff',
+              position: 'relative',
+              backgroundColor: '#000000',
+              borderRadius: '4px'
+            }}>
+              {/* Penalty Area */}
+              <div style={{
+                position: 'absolute',
+                left: '0',
+                top: '100px',
+                transform: 'translateY(-50%)',
+                width: '50px',
+                height: '90px',
+                border: '2px solid #00ccff',
+                borderLeft: 'none'
+              }} />
+              <div style={{
+                position: 'absolute',
+                right: '0',
+                top: '100px',
+                transform: 'translateY(-50%)',
+                width: '50px',
+                height: '90px',
+                border: '2px solid #00ccff',
+                borderRight: 'none'
+              }} />
+              
+              {/* Center Circle */}
+              <div style={{
+                position: 'absolute',
+                left: '275px',
+                top: '100px',
+                transform: 'translate(-50%, -50%)',
+                width: '60px',
+                height: '60px',
+                border: '2px solid #00ccff',
+                borderRadius: '80px'
+              }} />
+              
+              {/* Center Line */}
+              <div style={{
+                position: 'absolute',
+                left: '275px',
+                top: '0',
+                width: '2px',
+                height: '199px',
+                backgroundColor: '#00ccff'
+              }} />
+              
+              {/* Player Position Dots */}
+              <div style={{
+                position: 'absolute',
+                left: '30px',
+                top: '100px',
+                width: '12px',
+                height: '12px',
+                backgroundColor: '#00ccff',
+                borderRadius: '50%',
+                transform: 'translate(-50%, -50%)'
+              }} />
+              
+            </div>
+          </div>
+         
+        </div>
+        <div class="abilities">
+          <h2 class="text-2xl font-bold mb-4">HABILIDADES</h2>
+          <br>
           
-        </div>
-        <div class="equipo">
-          <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/Russian_Premier_League.svg.png" alt="Equipo 2" />
+          <div class="ability-bar">
+            <span class="w-24">control </span>
+            {[...Array(9)].map((_, i) => (
+              <div key={i} class="ability-dot"></div>
+            ))}
+          </div>
+          
+          <div class="ability-bar">
+            <span class="w-24">Regate</span>
+            {[...Array(8)].map((_, i) => (
+              <div key={i} class="ability-dot"></div>
+            ))}
+          </div>
+          
+          <div class="ability-bar">
+            <span class="w-24">Remate</span>
+            {[...Array(7)].map((_, i) => (
+              <div key={i} class="ability-dot"></div>
+            ))}
+          </div>
+          
+          <div class="ability-bar">
+            <span class="w-24">Aceleración
+            </span>
+            {[...Array(6)].map((_, i) => (
+              <div key={i} class="ability-dot"></div>
+            ))}
+          </div>
         </div>
       </div>
+      <div class="history">
+        <h2 class="text-2xl font-bold mb-4">HISTORIA DEL JUGADOR</h2>
+        <p class="mb-4">
+          Jhon Andrés Córdoba Copete, nacido el 11 de mayo de 1993 en Istmina, Chocó, es un destacado futbolista colombiano que se desempeña como delantero. Actualmente, juega para el FC Krasnodar en la Liga Premier de Rusia. Su carrera ha sido notable tanto a nivel de clubes como en la selección nacional de Colombia.
+          Córdoba comenzó su carrera profesional en el Envigado F.C., donde debutó en 2010. Su talento y capacidad goleadora rápidamente llamaron la atención, lo que le permitió dar el salto al fútbol internacional. En 2012, se unió a los Jaguares de Chiapas en México, donde continuó demostrando su valía como delantero. Después de su paso por México, Córdoba se trasladó a Europa, donde jugó para varios clubes en España y Alemania. En España, tuvo estancias en el RCD Espanyol y el Granada CF, mientras que en Alemania jugó para el 1. FSV Mainz 05 y el FC Colonia. Su tiempo en Europa fue crucial para su desarrollo, enfrentándose a algunos de los mejores defensores del mundo y perfeccionando su juego.</p>
+        <p class="mb-4">
+          En 2020, Córdoba se unió al Hertha Berlín en la Bundesliga, donde tuvo una temporada destacada antes de trasladarse al FC Krasnodar en 2021. En Rusia, ha continuado mostrando su capacidad goleadora, convirtiéndose en una pieza clave para su equipo. Su rendimiento en el FC Krasnodar ha sido impresionante, lo que le ha valido el reconocimiento tanto a nivel nacional como internacional.        </p>
+        <p class="mb-4">
+          A nivel internacional, Jhon Córdoba ha sido un miembro regular de la selección colombiana desde su debut en 2023. Su participación en la Copa América 2024 fue particularmente destacada, donde jugó un papel crucial en el ataque colombiano, ayudando a su equipo a alcanzar la final y obtener la medalla de plata. Su capacidad para marcar goles en momentos decisivos lo ha convertido en un jugador indispensable para la selección.        </p>
+        <p>
     </div>
-  </main>
-  <footer class="footer">
-    <p>© 2024 Tu Empresa. Todos los derechos reservados.</p>
-  </footer>
+  </div>
 </Layout>

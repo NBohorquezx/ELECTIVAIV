@@ -1,141 +1,285 @@
 ---
 import Layout from "../layouts/Layout.astro";
 ---
-
-<style>
-  body {
+<Layout title="C.vargas">
+  <style>
+    body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: url(https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/fondo_index.png) no-repeat center center fixed;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    justify-content: space-between;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      cursor: url('https://spar2099.sirv.com/la_seleccion/guayo2.png') 16 16, auto;
   }
+  a { cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), pointer; /* Cambia el cursor sobre enlaces */ } 
+  button { cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), pointer; /* Cambia el cursor sobre botones */ } 
+  .custom-cursor { cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), auto; /* Cambia el cursor en elementos específicos */ } /* Mantener el cursor al hacer clic */ 
+  a:active,
+   button:active, 
+   .custom-cursor:active { 
+    cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), auto; /* Mantener el cursor al hacer clic */ }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .resume {
+      background-color: #111;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
 
-  .contenedor {
-    width: 66%;
-    margin: 20px auto;
-    background-color: rgba(0, 0, 0, 0.7);
-    border: 5px solid #004488;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    position: relative;
-    padding: 20px;
-    flex: 1;
-    padding-bottom: 10px;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-gap: 20px;
-  }
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+    .about-me, .abilities, .position, .teams {
+      background-color: #222;
+      border-radius: 5px;
+      padding: 15px;
+    }
+    .photo {
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+      border-radius: 5px;
+      margin: 0 auto;
+      transform: translateX(7%); /* Desplazo la imagen 10% a la derecha */
+    }
+    .photo img {
+      width: 170%; /* Hago la imagen más grande */
+      height: 170%; /* Hago la imagen más grande */
+      object-fit: cover;
+    }
+    .ability-bar {
+      display: flex;
+      margin-bottom: 10px;
+    }
+    .ability-dot {
+      width: 15px;
+      height: 15px;
+      background-color: #00ccff;
+      border-radius: 50%;
+      margin-right: 5px;
+    }
+    .field {
+      width: 100%;
+      height: 150px;
+      border: 2px solid #00ccff;
+      position: relative;
+    }
+    .player-position {
+      width: 20px;
+      height: 20px;
+      background-color: #00ccff;
+      border-radius: 50%;
+      position: absolute;
+    }
+    .history {
+      background-color: #222;
+      border-radius: 5px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    .equipos {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+      display: flex;
+      gap: 10px; /* Ajusto la distancia entre las imágenes */
+      justify-content: center; /* Centrar las imágenes */
+      width: 70%; /* Hago la imagen más grande */
+      height: 80%; /* Hago la imagen más grande */
+      transform: translateX(25%); 
+    }
 
-  .texto {
-    grid-column: 1 / 2;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 40px;
-  }
-
-  .foto {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    overflow: hidden; /* Importante para que la imagen no sobresalga del contenedor */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 75%; /* Asegura que el contenedor ocupe toda la altura asignada */
-  }
-
-  .foto img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Para que la imagen cubra todo el contenedor */
-  }
-
-  .equipos {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-    display: flex;
-    gap: 10px;
-  }
-
-  .equipos .equipo {
-    flex: 1;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 10px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .equipos .equipo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-  }
-</style>
-
-<Layout title="Nueva Pestaña">
-  <main>
-    <div class="contenedor">
-      <!-- Sección de Texto -->
-      <div class="texto">
-        <h1>Bienvenido a la Nueva Pestaña</h1>
-        <p>
-          Dávinson Sánchez Quintero, nacido el 12 de junio de 1996 en Caloto, Cauca, es un destacado defensa central colombiano que ha dejado una huella significativa tanto en su carrera de clubes como en la Selección Colombia. Su trayectoria profesional comenzó en Atlético Nacional, donde debutó en 2013 y rápidamente se consolidó como uno de los defensores más prometedores del país. Con Nacional, Sánchez ganó la Copa Libertadores en 2016, un logro que catapultó su carrera internacional.        </p>
-        <br><br>
-        <p>
-          En 2016, Dávinson se unió al Ajax de Ámsterdam, donde tuvo una temporada impresionante que culminó con su participación en la final de la UEFA Europa League. Su desempeño en el Ajax le valió el trofeo Rinus Michels como el mejor jugador del equipo en la Eredivisie 2016-17. Este éxito llamó la atención del Tottenham Hotspur, que lo fichó en 2017 por una cifra récord para un defensor colombiano.        </p>
-        <p>
-          Durante su tiempo en Tottenham, Sánchez se estableció como un pilar en la defensa del equipo, participando en competiciones de alto nivel como la Premier League y la UEFA Champions League. Su solidez defensiva y capacidad para leer el juego lo convirtieron en un jugador clave para los Spurs. En 2023, Dávinson se trasladó al Galatasaray de Turquía, donde continúa demostrando su valía en la Superliga turca.
-
-        </p>
-        <br><br>
-        <p>
-          En cuanto a su carrera internacional, Dávinson debutó con la Selección Colombia en noviembre de 2016 en un partido de clasificación para el Mundial contra Argentina. Desde entonces, ha sido una presencia constante en la defensa colombiana, participando en torneos importantes como la Copa América y las eliminatorias para la Copa del Mundo. Su liderazgo y experiencia han sido fundamentales para el equipo nacional.
-
-        </p>
-        <p>
-          Uno de los momentos más destacados de Sánchez con la selección fue durante la Copa América 2024, donde Colombia llegó a la final. En las semifinales contra Uruguay, Dávinson fue una de las figuras del partido, demostrando su capacidad para competir bajo presión y su habilidad para liderar la defensa en situaciones críticas. Aunque Colombia no ganó el torneo, su desempeño fue ampliamente elogiado.
-
-        </p>
-        <br><br>
-        <p>
-          A lo largo de su carrera, Dávinson ha enfrentado desafíos, incluyendo lesiones y la competencia por un lugar en el equipo titular. Sin embargo, su determinación y profesionalismo le han permitido superar estos obstáculos y seguir siendo un jugador clave tanto para su club como para la selección. Su capacidad para adaptarse a diferentes estilos de juego y su compromiso con el equipo son cualidades que lo distinguen.
-
-        </p>
-        <p>
-          Recientemente, Sánchez ha sido desconvocado de la selección debido a una suspensión, lo que subraya la importancia de su presencia en el equipo. A pesar de esta ausencia temporal, su influencia en la selección es indiscutible, y se espera que regrese pronto para continuar contribuyendo al éxito del equipo nacional.
-
-        </p>
-        <!-- Más texto si es necesario -->
+    .galata{
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+      border-radius: 5px;
+      margin: 0 auto;
+      transform: translateX(7%); /* Desplazo la imagen 10% a la derecha */
+    }
+    
+  </style>
+  <div class="container">
+    <div class="resume">
+      <div class="header">
+        <h1 class="text-4xl font-bold">.</h1>
       </div>
-
-      <!-- Sección de Foto -->
-      <div class="foto">
-        <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/d.sanchez.png" alt="Foto del jugador" />
-      </div>
-
-      <!-- Sección de Equipos -->
-      <div class="equipos">
-        <div class="equipo">
-          <a href="galatasaray">
-            <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/Galatasaray.png" alt="galatasaray" />
-          </a>
+      <div class="content">
+        <div class="photo">
+          <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/d.sanchez.png" alt="Player Photo" />
+        </div>
+        <div class="about-me">
+          <h2 class="text-2xl font-bold mb-4">
+            ACERCA DE MÍ
+          </h2>
+          <p>LUGAR DE NACIMIENTO: Cauca-Colombia</p>
+          <p>FECHA DE NACIMIENTO: 12-06-1996</p>
+          <p>EDAD: 28</p>
+          <p>ALTURA: 1.85 cm</p>
+          <p>PIERNA HABIL: Pierna izquierda</p>
+        </div>
+        <div class="equipos">
+          <div class="galata">
+            <a href="galatasaray">
+              <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/Galatasaray%20(2)%20(1).png" alt="liverpool" />
+            </a>
+          </div>
+          <div class="equipo">
+            <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/turquia.jpg" alt="Equipo 2" />
+          </div>
+        </div>
+        <div class="teams">
+          <h2 class="text-2xl font-bold mb-4">EQUIPOS ANTERIORES</h2>
+          <br>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">2013-2016</span>
+            <span>C. A Nacional</span>
+          </div>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">2016-2017</span>
+            <span>A.F.C Ajax </span>
+          </div>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">2017-2023</span>
+            <span>Tottenham Hotspur F.C</span>
+          </div>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">2023-Presente</span>
+            <span>Galatasaray S. K</span>
+          </div>
+        </div>
+        
+        <div className="position">
+          <h2 className="text-2xl font-bold mb-4">POSICIÓN EN EL CAMPO</h2>
+          <br>
+          <div className="field-container" style={{ 
+            width: '80px',
+            aspectRatio: '1.5/1',
+            position: 'relative',
+            marginBottom: '1rem'
+          }}>
+            <div className="field" style={{
+              width: '550px',
+              height: '200px',
+              border: '2px solid #00ccff',
+              position: 'relative',
+              backgroundColor: '#000000',
+              borderRadius: '4px'
+            }}>
+              {/* Penalty Area */}
+              <div style={{
+                position: 'absolute',
+                left: '0',
+                top: '100px',
+                transform: 'translateY(-50%)',
+                width: '50px',
+                height: '90px',
+                border: '2px solid #00ccff',
+                borderLeft: 'none'
+              }} />
+              <div style={{
+                position: 'absolute',
+                right: '0',
+                top: '100px',
+                transform: 'translateY(-50%)',
+                width: '50px',
+                height: '90px',
+                border: '2px solid #00ccff',
+                borderRight: 'none'
+              }} />
+              
+              {/* Center Circle */}
+              <div style={{
+                position: 'absolute',
+                left: '275px',
+                top: '100px',
+                transform: 'translate(-50%, -50%)',
+                width: '60px',
+                height: '60px',
+                border: '2px solid #00ccff',
+                borderRadius: '80px'
+              }} />
+              
+              {/* Center Line */}
+              <div style={{
+                position: 'absolute',
+                left: '275px',
+                top: '0',
+                width: '2px',
+                height: '199px',
+                backgroundColor: '#00ccff'
+              }} />
+              
+              {/* Player Position Dots */}
+              <div style={{
+                position: 'absolute',
+                left: '30px',
+                top: '100px',
+                width: '12px',
+                height: '12px',
+                backgroundColor: '#00ccff',
+                borderRadius: '50%',
+                transform: 'translate(-50%, -50%)'
+              }} />
+              
+            </div>
+          </div>
+         
+        </div>
+        <div class="abilities">
+          <h2 class="text-2xl font-bold mb-4">HABILIDADES</h2>
+          <br>
           
-        </div>
-        <div class="equipo">
-          <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/S%C3%BCper_Lig_logo.svg.png" alt="Equipo 2" />
+          <div class="ability-bar">
+            <span class="w-24">control </span>
+            {[...Array(9)].map((_, i) => (
+              <div key={i} class="ability-dot"></div>
+            ))}
+          </div>
+          
+          <div class="ability-bar">
+            <span class="w-24">Regate</span>
+            {[...Array(8)].map((_, i) => (
+              <div key={i} class="ability-dot"></div>
+            ))}
+          </div>
+          
+          <div class="ability-bar">
+            <span class="w-24">Remate</span>
+            {[...Array(7)].map((_, i) => (
+              <div key={i} class="ability-dot"></div>
+            ))}
+          </div>
+          
+          <div class="ability-bar">
+            <span class="w-24">Aceleración
+            </span>
+            {[...Array(6)].map((_, i) => (
+              <div key={i} class="ability-dot"></div>
+            ))}
+          </div>
         </div>
       </div>
+      <div class="history">
+        <h2 class="text-2xl font-bold mb-4">HISTORIA DEL JUGADOR</h2>
+        <p class="mb-4">
+          Dávinson Sánchez Quintero, nacido el 12 de junio de 1996 en Caloto, Cauca, es un destacado defensa central colombiano que ha dejado una huella significativa tanto en su carrera de clubes como en la Selección Colombia. Su trayectoria profesional comenzó en Atlético Nacional, donde debutó en 2013 y rápidamente se consolidó como uno de los defensores más prometedores del país. Con Nacional, Sánchez ganó la Copa Libertadores en 2016, un logro que catapultó su carrera internacional.        </p>
+          En 2016, Dávinson se unió al Ajax de Ámsterdam, donde tuvo una temporada impresionante que culminó con su participación en la final de la UEFA Europa League. Su desempeño en el Ajax le valió el trofeo Rinus Michels como el mejor jugador del equipo en la Eredivisie 2016-17. Este éxito llamó la atención del Tottenham Hotspur, que lo fichó en 2017 por una cifra récord para un defensor colombiano.</p>
+        <p class="mb-4">
+          Durante su tiempo en Tottenham, Sánchez se estableció como un pilar en la defensa del equipo, participando en competiciones de alto nivel como la Premier League y la UEFA Champions League. Su solidez defensiva y capacidad para leer el juego lo convirtieron en un jugador clave para los Spurs. En 2023, Dávinson se trasladó al Galatasaray de Turquía, donde continúa demostrando su valía en la Superliga turca.
+          En cuanto a su carrera internacional, Dávinson debutó con la Selección Colombia en noviembre de 2016 en un partido de clasificación para el Mundial contra Argentina. Desde entonces, ha sido una presencia constante en la defensa colombiana, participando en torneos importantes como la Copa América y las eliminatorias para la Copa del Mundo. Su liderazgo y experiencia han sido fundamentales para el equipo nacional.          Durante su tiempo en Tottenham, Sánchez se estableció como un pilar en la defensa del equipo, participando en competiciones de alto nivel como la Premier League y la UEFA Champions League. Su solidez defensiva y capacidad para leer el juego lo convirtieron en un jugador clave para los Spurs. En 2023, Dávinson se trasladó al Galatasaray de Turquía, donde continúa demostrando su valía en la Superliga turca.
+          </p>
+        <p class="mb-4">
+          Uno de los momentos más destacados de Sánchez con la selección fue durante la Copa América 2024, donde Colombia llegó a la final. En las semifinales contra Uruguay, Dávinson fue una de las figuras del partido, demostrando su capacidad para competir bajo presión y su habilidad para liderar la defensa en situaciones críticas. Aunque Colombia no ganó el torneo, su desempeño fue ampliamente elogiado.
+          A lo largo de su carrera, Dávinson ha enfrentado desafíos, incluyendo lesiones y la competencia por un lugar en el equipo titular. Sin embargo, su determinación y profesionalismo le han permitido superar estos obstáculos y seguir siendo un jugador clave tanto para su club como para la selección. Su capacidad para adaptarse a diferentes estilos de juego y su compromiso con el equipo son cualidades que lo distinguen.
+        </p>
+        <p>
+          Recientemente, Sánchez ha sido desconvocado de la selección debido a una suspensión, lo que subraya la importancia de su presencia en el equipo. A pesar de esta ausencia temporal, su influencia en la selección es indiscutible, y se espera que regrese pronto para continuar contribuyendo al éxito del equipo nacional.      </div>
     </div>
-  </main>
-  <footer class="footer">
-    <p>© 2024 Tu Empresa. Todos los derechos reservados.</p>
-  </footer>
+  </div>
 </Layout>

@@ -2,150 +2,145 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<style>
+<Layout title="Atlas F.C.">
+  <style>
     body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: url(https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/fondo_index.png) no-repeat center center fixed;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    justify-content: space-between;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      cursor: url('https://spar2099.sirv.com/la_seleccion/guayo2.png') 16 16, auto;
   }
-
-  .contenedor {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 100px auto;
-    width: 100%;
-    max-width: 1200px;
-  }
-
-  h1 {
-    color: #fff;
-    font-size: 40px;
-    margin-bottom: 30px;
-  }
-
-  .equipo-atlas {
-    width: 300px;
-    height: 300px;
-    background-color: rgba(255, 255, 255, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 30px;
-    border-radius: 10px;
-    border: 5px solid #004488;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  }
-
-  .equipo-atlas img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 5px;
-  }
-
-  .equipos {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 30px;
-  }
-
-  .equipo {
-    width: 150px;
-    height: 150px;
-    background-color: rgba(255, 255, 255, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    border: 2px solid #004488;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  }
-
-  .equipo img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 5px;
-  }
-
-  .texto {
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 20px;
-  border-radius: 10px;
-  width: 100%;           
-  max-width: 900px;       
-  height: 400px;          
-  overflow-y: auto;       
-  box-shadow: 0 0 10px rgba(255, 250, 250, 0.5);
-  text-align: justify;
-}
-
-</style>
-
-<Layout title="Nueva Pestaña">
-  <main>
-    <div class="contenedor">
-
-      <h1>KRASNODAR F.C</h1>
-
-
-      <div class="equipo-atlas">
-        <a href="kranodar">
+  a { cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), pointer; /* Cambia el cursor sobre enlaces */ } 
+  button { cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), pointer; /* Cambia el cursor sobre botones */ } 
+  .custom-cursor { cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), auto; /* Cambia el cursor en elementos específicos */ } /* Mantener el cursor al hacer clic */ 
+  a:active,
+   button:active, 
+   .custom-cursor:active { 
+    cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), auto; /* Mantener el cursor al hacer clic */ }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .resume {
+      background-color: #111;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+    /* .header {
+      background-color: #000;
+      padding: 20px;
+      text-align: center;
+    } */
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+    .logo, .about-club, .achievements, .identity {
+      background-color: #222;
+      border-radius: 5px;
+      padding: 15px;
+    }
+    .logo img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 5px;
+    }
+    .ability-bar {
+      display: flex;
+      margin-bottom: 10px;
+    }
+    .ability-dot {
+      width: 15px;
+      height: 15px;
+      background-color: #00ccff;
+      border-radius: 50%;
+      margin-right: 5px;
+    }
+    .history {
+      background-color: #222;
+      border-radius: 5px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+  </style>
+<button 
+onclick="history.back()" 
+class="fixed top-[120px] right-[40px] bg-black text-white hover:bg-white hover:text-black px-3 py-2 rounded-md transition-colors duration-300 flex items-center gap-2"
+style="z-index: 1000;"
+>
+<svg 
+  xmlns="http://www.w3.org/2000/svg" 
+  width="16" 
+  height="16" 
+  viewBox="0 0 24 24" 
+  fill="none" 
+  stroke="currentColor" 
+  stroke-width="2" 
+  stroke-linecap="round" 
+  stroke-linejoin="round"
+>
+  <path d="M19 12H5M12 19l-7-7 7-7"/>
+</svg>
+Volver
+</button>
+  <div class="container">
+    <div class="resume">
+      <div class="header">
+        <h1 class="text-4xl font-bold">ATLAS F.C</h1>
+      </div>
+      <div class="content">
+        <div class="logo">
           <img
-            src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/Krasnodar%20(1).png"
-            alt="kranodar"
+            src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/Krasnodar.png"
+            alt="atlas"
           />
-        </a>
-      </div>
-
-
-      <div class="equipos">
-        <div class="equipo">
-          <a href="equipo">
-            <img
-              src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/7e2cda27d7270ac3ae8f8833de11a44d.jpg"
-              alt="Equipo 1"
-            />
-          </a>
         </div>
-        <div class="equipo">
-          <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/Russian_Premier_League.svg.png" alt="Equipo 2" />
+        <div class="about-club">
+          <h2 class="text-2xl font-bold mb-4">SOBRE EL CLUB</h2>
+          <p>FUNDACIÓN: 2008</p>
+          <p>UBICACIÓN: Krasnodar, Rusia</p>
+          <p>ESTADIO: Estadio Krasnodar</p>
+          <p>APODO: Los Toros</p>
+          <h2 class="text-2xl font-bold mb-4">HISTORIA DEL CLUB</h2>
+          <p>Krasnodar es uno de los clubes más jóvenes en la primera división rusa, fundado en 2008. Desde sus inicios, ha tenido un crecimiento meteórico, destacándose rápidamente en la Premier League Rusa. </p>
+          <p>Krasnodar ha invertido en infraestructura y desarrollo de juveniles, construyendo un complejo deportivo moderno y una academia de renombre. Sus éxitos recientes en competiciones europeas han posicionado al club como un contendiente en la escena del fútbol ruso.​</p>
+ 
         </div>
-      </div>
-
-
-      <div class="texto">
-        <h1 class="text-center my-4 font-bold" style="font-size: 26px; color: black;">
-          Fundación y Primeros Años (2008-2010)
-        </h1>        
-        <p>
-          El Krasnodar F.C. fue fundado el 22 de febrero de 2008 por el empresario ruso Sergey Galitsky. Desde su creación, el club comenzó a competir en la Segunda División de Rusia y, en 2009, logró el ascenso a la Primera División, la segunda categoría del fútbol ruso. En su primera temporada en la Primera División, el equipo terminó en la décima posición.
-        </p>
-        <h1 class="text-center my-4 font-bold" style="font-size: 26px; color: black;">
-          Ascenso y Estabilidad (2011-2016)
-        </h1>        
-        <p>
-          En 2011, el Krasnodar F.C. logró otro ascenso, esta vez a la Liga Premier de Rusia, la máxima categoría del fútbol ruso. Desde entonces, el club ha mantenido una posición estable en la liga, logrando clasificaciones que le permiten participar en competiciones europeas. En 2013, comenzó la construcción del nuevo estadio, el Krasnodar Stadium, que fue inaugurado en 2016.
-        </p>
-        <h1 class="text-center my-4 font-bold" style="font-size: 26px; color: black;">
-          Éxitos y Reconocimiento (2016-Presente)
-        </h1>        
-        <p>
-          Desde la inauguración del nuevo estadio, el Krasnodar F.C. ha continuado su desarrollo y ha logrado varios éxitos importantes. El club ha participado en la UEFA Champions League y ha ganado títulos nacionales, consolidándose como uno de los equipos más importantes de Rusia. Además, ha atraído a jugadores talentosos y ha mantenido una estructura sólida que le permite competir a alto nivel tanto a nivel nacional como internacional.
-        </p>
-       
+        <div class="achievements">
+          <h2 class="text-2xl font-bold mb-4">LOGROS</h2>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">2013. 2014</span>
+            <span>Subcampeón en la Copa de Rusia</span>
+          </div>
+        </div>
+        <div class="identity">
+          <h2 class="text-2xl font-bold mb-4">IDENTIDAD DEL EQUIPO</h2>
+          <div class="ability-bar">
+            <span class="w-24">Tradición</span>
+            {[...Array(9)].map((_, i) => (
+              <div class="ability-dot"></div>
+            ))}
+          </div>
+          <div class="ability-bar">
+            <span class="w-24">Cantera</span>
+            {[...Array(8)].map((_, i) => (
+              <div class="ability-dot"></div>
+            ))}
+          </div>
+          <div class="ability-bar">
+            <span class="w-24">Afición</span>
+            {[...Array(10)].map((_, i) => (
+              <div class="ability-dot"></div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
-  </main>
-
-  <footer class="footer">
-    <p>© 2024 Tu Empresa. Todos los derechos reservados.</p>
-  </footer>
+  </div>
 </Layout>
