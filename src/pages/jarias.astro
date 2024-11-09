@@ -1,137 +1,281 @@
 ---
 import Layout from "../layouts/Layout.astro";
 ---
-
-<style>
-  body {
+<Layout title="C.vargas">
+  <style>
+    body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: url(img/fondo_jugador.png) no-repeat center center fixed;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      cursor: url('https://spar2099.sirv.com/la_seleccion/guayo2.png') 16 16, auto;
   }
+  a { cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), pointer; /* Cambia el cursor sobre enlaces */ } 
+  button { cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), pointer; /* Cambia el cursor sobre botones */ } 
+  .custom-cursor { cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), auto; /* Cambia el cursor en elementos específicos */ } /* Mantener el cursor al hacer clic */ 
+  a:active,
+   button:active, 
+   .custom-cursor:active { 
+    cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), auto; /* Mantener el cursor al hacer clic */ }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .resume {
+      background-color: #111;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
 
-  .contenedor {
-    width: 66%;
-    margin: 20px auto;
-    background-color: rgba(0, 0, 0, 0.7);
-    border: 5px solid #004488;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    position: relative;
-    padding: 20px;
-    flex: 1;
-    padding-bottom: 10px;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-gap: 20px;
-  }
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+    .about-me, .abilities, .position, .teams {
+      background-color: #222;
+      border-radius: 5px;
+      padding: 15px;
+    }
+    .photo {
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+      border-radius: 5px;
+      margin: 0 auto;
+      transform: translateX(7%); /* Desplazo la imagen 10% a la derecha */
+    }
+    .photo img {
+      width: 170%; /* Hago la imagen más grande */
+      height: 170%; /* Hago la imagen más grande */
+      object-fit: cover;
+    }
+    .ability-bar {
+      display: flex;
+      margin-bottom: 10px;
+    }
+    .ability-dot {
+      width: 15px;
+      height: 15px;
+      background-color: #00ccff;
+      border-radius: 50%;
+      margin-right: 5px;
+    }
+    .field {
+      width: 100%;
+      height: 150px;
+      border: 2px solid #00ccff;
+      position: relative;
+    }
+    .player-position {
+      width: 20px;
+      height: 20px;
+      background-color: #00ccff;
+      border-radius: 50%;
+      position: absolute;
+    }
+    .history {
+      background-color: #222;
+      border-radius: 5px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    .equipos {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+      display: flex;
+      gap: 10px; /* Ajusto la distancia entre las imágenes */
+      justify-content: center; /* Centrar las imágenes */
+      width: 70%; /* Hago la imagen más grande */
+      height: 80%; /* Hago la imagen más grande */
+      transform: translateX(25%); 
+    }
 
-  .texto {
-    grid-column: 1 / 2;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 40px;
-  }
-
-  .foto {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    overflow: hidden; /* Importante para que la imagen no sobresalga del contenedor */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 75%; /* Asegura que el contenedor ocupe toda la altura asignada */
-  }
-
-  .foto img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Para que la imagen cubra todo el contenedor */
-  }
-
-  .equipos {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-    display: flex;
-    gap: 10px;
-  }
-
-  .equipos .equipo {
-    flex: 1;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 10px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .equipos .equipo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-  }
-</style>
-
-<Layout title="Nueva Pestaña">
-  <main>
-    <div class="contenedor">
-      <!-- Sección de Texto -->
-      <div class="texto">
-        <h1>Bienvenido a la Nueva Pestaña</h1>
-        <p>
+  </style>
+  <div class="container">
+    <div class="resume">
+      <div class="header">
+        <h1 class="text-4xl font-bold">.</h1>
+      </div>
+      <div class="content">
+        <div class="photo">
+          <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/j.arias.png" alt="Player Photo" />
+        </div>
+        <div class="about-me">
+          <h2 class="text-2xl font-bold mb-4">
+            ACERCA DE MÍ
+          </h2>
+          <p>LUGAR DE NACIMIENTO: Quibdo-Colombia</p>
+          <p>FECHA DE NACIMIENTO: 21-09-1997</p>
+          <p>EDAD: 27</p>
+          <p>ALTURA: 1.68 cm</p>
+          <p>PIERNA HABIL: Pierna derecha</p>
+        </div>
+        <div class="equipos">
+          <div class="fluminense">
+            <a href="fluminense">
+              <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/Fluminense.png" alt="liverpool" />
+            </a>
+          </div>
+          <div class="equipo">
+            <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/Campeonato-Brasileiro-S%C3%A9rie-A-logo.png" alt="Equipo 2" />
+          </div>
+        </div>
+        <div class="teams">
+          <h2 class="text-2xl font-bold mb-4">EQUIPOS ANTERIORES</h2>
+          <br>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">2018</span>
+            <span>Club Llaneros</span>
+          </div>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">2019</span>
+            <span>Patriotas Boyacá</span>
+          </div>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">2020</span>
+            <span>America de Cali</span>
+          </div>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">2021</span>
+            <span>Independiente Santa Fé</span>
+          </div>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">2021-presente</span>
+            <span>Fluminense F.C</span>
+          </div>
+        </div>
+        
+        <div className="position">
+          <h2 className="text-2xl font-bold mb-4">POSICIÓN EN EL CAMPO</h2>
+          <br>
+          <div className="field-container" style={{ 
+            width: '80px',
+            aspectRatio: '1.5/1',
+            position: 'relative',
+            marginBottom: '1rem'
+          }}>
+            <div className="field" style={{
+              width: '550px',
+              height: '200px',
+              border: '2px solid #00ccff',
+              position: 'relative',
+              backgroundColor: '#000000',
+              borderRadius: '4px'
+            }}>
+              {/* Penalty Area */}
+              <div style={{
+                position: 'absolute',
+                left: '0',
+                top: '100px',
+                transform: 'translateY(-50%)',
+                width: '50px',
+                height: '90px',
+                border: '2px solid #00ccff',
+                borderLeft: 'none'
+              }} />
+              <div style={{
+                position: 'absolute',
+                right: '0',
+                top: '100px',
+                transform: 'translateY(-50%)',
+                width: '50px',
+                height: '90px',
+                border: '2px solid #00ccff',
+                borderRight: 'none'
+              }} />
+              
+              {/* Center Circle */}
+              <div style={{
+                position: 'absolute',
+                left: '275px',
+                top: '100px',
+                transform: 'translate(-50%, -50%)',
+                width: '60px',
+                height: '60px',
+                border: '2px solid #00ccff',
+                borderRadius: '80px'
+              }} />
+              
+              {/* Center Line */}
+              <div style={{
+                position: 'absolute',
+                left: '275px',
+                top: '0',
+                width: '2px',
+                height: '199px',
+                backgroundColor: '#00ccff'
+              }} />
+              
+              {/* Player Position Dots */}
+              <div style={{
+                position: 'absolute',
+                left: '30px',
+                top: '100px',
+                width: '12px',
+                height: '12px',
+                backgroundColor: '#00ccff',
+                borderRadius: '50%',
+                transform: 'translate(-50%, -50%)'
+              }} />
+              
+            </div>
+          </div>
+         
+        </div>
+        <div class="abilities">
+          <h2 class="text-2xl font-bold mb-4">HABILIDADES</h2>
+          <br>
+          
+          <div class="ability-bar">
+            <span class="w-24">control </span>
+            {[...Array(9)].map((_, i) => (
+              <div key={i} class="ability-dot"></div>
+            ))}
+          </div>
+          
+          <div class="ability-bar">
+            <span class="w-24">Regate</span>
+            {[...Array(8)].map((_, i) => (
+              <div key={i} class="ability-dot"></div>
+            ))}
+          </div>
+          
+          <div class="ability-bar">
+            <span class="w-24">Remate</span>
+            {[...Array(7)].map((_, i) => (
+              <div key={i} class="ability-dot"></div>
+            ))}
+          </div>
+          
+          <div class="ability-bar">
+            <span class="w-24">Aceleración
+            </span>
+            {[...Array(6)].map((_, i) => (
+              <div key={i} class="ability-dot"></div>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div class="history">
+        <h2 class="text-2xl font-bold mb-4">HISTORIA DEL JUGADOR</h2>
+        <p class="mb-4">
           Jhon Adolfo Arias Andrade, nacido el 21 de septiembre de 1997 en Quibdó, Chocó, es un talentoso futbolista colombiano que ha destacado tanto en su club, Fluminense, como en la Selección Colombia1. Su carrera profesional comenzó en el Club Llaneros en 2018, y desde entonces ha pasado por varios equipos colombianos, incluyendo Patriotas Boyacá, América de Cali e Independiente Santa Fe.
+          En 2021, Arias se unió a Fluminense en el Campeonato Brasileño de Serie A, donde rápidamente se convirtió en una pieza clave del equipo1. Su habilidad para jugar como extremo, combinada con su velocidad y destreza en el campo, le ha permitido acumular numerosos goles y asistencias. En abril de 2023, alcanzó los cien partidos con Fluminense, consolidándose como un jugador indispensable para el club.  
+        <p class="mb-4">
+          Uno de los momentos más destacados de su carrera en Fluminense fue la conquista de la Copa Libertadores en 2023. Durante el torneo, Arias participó en todos los partidos, anotando dos goles y proporcionando tres asistencias, lo que le valió ser elegido como el Balón de Bronce del Mundial de Clubes 20231. Además, en febrero de 2024, marcó un doblete en la victoria sobre Liga de Quito, asegurando el título de la Recopa Sudamericana para su equipo.        
+          En cuanto a su trayectoria con la Selección Colombia, Arias fue convocado por primera vez en mayo de 2022 para un amistoso contra Arabia Saudita1. Desde entonces, ha sido una presencia constante en el equipo nacional, participando en las eliminatorias para el Mundial de 2026 y en la Copa América 2024, donde Colombia terminó como subcampeón1. Su primer gol internacional lo anotó en un amistoso contra Rumania en marzo de 2024.              
+          </p>
+        <p class="mb-4">
+          Arias ha demostrado ser un jugador versátil y confiable para la Selección Colombia, contribuyendo con asistencias cruciales en partidos importantes, como en la victoria sobre Venezuela en las eliminatorias1. Su desempeño ha sido fundamental para el equipo, y su habilidad para adaptarse a diferentes situaciones de juego lo convierte en un activo valioso para cualquier entrenador.        
+          Recientemente, se ha anunciado que Arias dejará Fluminense a finales de 2024 para buscar nuevas oportunidades en Europa2. Esta decisión se tomó en medio de una temporada difícil para el club brasileño, que ha enfrentado eliminaciones en varios torneos y una campaña complicada en el Brasileirao. A pesar de estos desafíos, Arias ha mantenido un alto nivel de rendimiento, lo que ha despertado el interés de varios equipos europeos. 
         </p>
-        <br><br>
-        <p>
-          En 2021, Arias se unió a Fluminense en el Campeonato Brasileño de Serie A, donde rápidamente se convirtió en una pieza clave del equipo1. Su habilidad para jugar como extremo, combinada con su velocidad y destreza en el campo, le ha permitido acumular numerosos goles y asistencias. En abril de 2023, alcanzó los cien partidos con Fluminense, consolidándose como un jugador indispensable para el club.        </p>
-        <br><br>
-        <p>
-          Uno de los momentos más destacados de su carrera en Fluminense fue la conquista de la Copa Libertadores en 2023. Durante el torneo, Arias participó en todos los partidos, anotando dos goles y proporcionando tres asistencias, lo que le valió ser elegido como el Balón de Bronce del Mundial de Clubes 20231. Además, en febrero de 2024, marcó un doblete en la victoria sobre Liga de Quito, asegurando el título de la Recopa Sudamericana para su equipo.        </p>
-        <br><br>
-        <p>
-          En cuanto a su trayectoria con la Selección Colombia, Arias fue convocado por primera vez en mayo de 2022 para un amistoso contra Arabia Saudita1. Desde entonces, ha sido una presencia constante en el equipo nacional, participando en las eliminatorias para el Mundial de 2026 y en la Copa América 2024, donde Colombia terminó como subcampeón1. Su primer gol internacional lo anotó en un amistoso contra Rumania en marzo de 2024.        </p>
-        
-        <br><br>
-        
-        <p>
-          Arias ha demostrado ser un jugador versátil y confiable para la Selección Colombia, contribuyendo con asistencias cruciales en partidos importantes, como en la victoria sobre Venezuela en las eliminatorias1. Su desempeño ha sido fundamental para el equipo, y su habilidad para adaptarse a diferentes situaciones de juego lo convierte en un activo valioso para cualquier entrenador.        </p>
-        <br><br>
-        <p>
-          Recientemente, se ha anunciado que Arias dejará Fluminense a finales de 2024 para buscar nuevas oportunidades en Europa2. Esta decisión se tomó en medio de una temporada difícil para el club brasileño, que ha enfrentado eliminaciones en varios torneos y una campaña complicada en el Brasileirao. A pesar de estos desafíos, Arias ha mantenido un alto nivel de rendimiento, lo que ha despertado el interés de varios equipos europeos.        </p>
-        <br><br>
         <p>
           La salida de Arias de Fluminense marca el final de una etapa exitosa en su carrera, pero también abre la puerta a nuevas oportunidades y desafíos en el fútbol europeo. Su deseo de jugar en Europa refleja su ambición y determinación de seguir creciendo como futbolista, y seguramente continuará siendo una figura destacada tanto en su nuevo club como en la Selección Colombia.
-        </p>
-        <!-- Más texto si es necesario -->
-      </div>
-
-      <!-- Sección de Foto -->
-      <div class="foto">
-        <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/j.arias.png" alt="Foto del jugador" />
-      </div>
-
-      <!-- Sección de Equipos -->
-      <div class="equipos">
-        <div class="equipo">
-          <a href="fluminense">
-            <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/Fluminense.png" alt="fluminense" />
-          </a>
-          
         </div>
-        <div class="equipo">
-          <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/Campeonato-Brasileiro-S%C3%A9rie-A-logo.png" alt="Equipo 2" />
-        </div>
-      </div>
     </div>
-  </main>
-  <footer class="footer">
-    <p>© 2024 Tu Empresa. Todos los derechos reservados.</p>
-  </footer>
+  </div>
 </Layout>

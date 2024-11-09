@@ -2,163 +2,153 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<style>
+<Layout title="Atlas F.C.">
+  <style>
     body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: url(https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/fondo_index.png) no-repeat center center fixed;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    justify-content: space-between;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      cursor: url('https://spar2099.sirv.com/la_seleccion/guayo2.png') 16 16, auto;
   }
-
-  .contenedor {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 100px auto;
-    width: 100%;
-    max-width: 1200px;
-  }
-
-  h1 {
-    color: #fff;
-    font-size: 40px;
-    margin-bottom: 30px;
-  }
-
-  .equipo-atlas {
-    width: 300px;
-    height: 300px;
-    background-color: rgba(255, 255, 255, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 30px;
-    border-radius: 10px;
-    border: 5px solid #004488;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  }
-
-  .equipo-atlas img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 5px;
-  }
-
-  .equipos {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 30px;
-  }
-
-  .equipo {
-    width: 150px;
-    height: 150px;
-    background-color: rgba(255, 255, 255, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    border: 2px solid #004488;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  }
-
-  .equipo img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 5px;
-  }
-
-  .texto {
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 20px;
-  border-radius: 10px;
-  width: 100%;           
-  max-width: 900px;       
-  height: 400px;          
-  overflow-y: auto;       
-  box-shadow: 0 0 10px rgba(255, 250, 250, 0.5);
-  text-align: justify;
-}
-
-</style>
-
-<Layout title="Nueva Pestaña">
-  <main>
-    <div class="contenedor">
-
-      <h1>LIVERPOOL F.C</h1>
-
-
-      <div class="equipo-atlas">
-        <a href="liverpool">
+  a { cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), pointer; /* Cambia el cursor sobre enlaces */ } 
+  button { cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), pointer; /* Cambia el cursor sobre botones */ } 
+  .custom-cursor { cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), auto; /* Cambia el cursor en elementos específicos */ } /* Mantener el cursor al hacer clic */ 
+  a:active,
+   button:active, 
+   .custom-cursor:active { 
+    cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), auto; /* Mantener el cursor al hacer clic */ }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .resume {
+      background-color: #111;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+    /* .header {
+      background-color: #000;
+      padding: 20px;
+      text-align: center;
+    } */
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+    .logo, .about-club, .achievements, .identity {
+      background-color: #222;
+      border-radius: 5px;
+      padding: 15px;
+    }
+    .logo img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 5px;
+    }
+    .ability-bar {
+      display: flex;
+      margin-bottom: 10px;
+    }
+    .ability-dot {
+      width: 15px;
+      height: 15px;
+      background-color: #00ccff;
+      border-radius: 50%;
+      margin-right: 5px;
+    }
+    .history {
+      background-color: #222;
+      border-radius: 5px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+  </style>
+<button 
+onclick="history.back()" 
+class="fixed top-[120px] right-[40px] bg-black text-white hover:bg-white hover:text-black px-3 py-2 rounded-md transition-colors duration-300 flex items-center gap-2"
+style="z-index: 1000;"
+>
+<svg 
+  xmlns="http://www.w3.org/2000/svg" 
+  width="16" 
+  height="16" 
+  viewBox="0 0 24 24" 
+  fill="none" 
+  stroke="currentColor" 
+  stroke-width="2" 
+  stroke-linecap="round" 
+  stroke-linejoin="round"
+>
+  <path d="M19 12H5M12 19l-7-7 7-7"/>
+</svg>
+Volver
+</button>
+  <div class="container">
+    <div class="resume">
+      <div class="header">
+        <h1 class="text-4xl font-bold">ATLAS F.C</h1>
+      </div>
+      <div class="content">
+        <div class="logo">
           <img
             src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/Liverpool%20(1)%20(1)%20(1).png"
-            alt="liverpool"
+            alt="atlas"
           />
-        </a>
-      </div>
-
-
-      <div class="equipos">
-        <div class="equipo">
-          <a href="equipo">
-            <img
-              src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/png-clipart-flag-of-england-flag-of-the-united-kingdom-flag-of-the-city-of-london-england-angle-english.png"
-              alt="Equipo 1"
-            />
-          </a>
         </div>
-        <div class="equipo">
-          <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/premier-league-logo-C13B9DEC31-seeklogo.com%20(1)%20(1).png" alt="Equipo 2" />
+        <div class="about-club">
+          <h2 class="text-2xl font-bold mb-4">SOBRE EL CLUB</h2>
+          <p>FUNDACIÓN: 3 de junio de 1892</p>
+          <p>UBICACIÓN: Liverpool, Inglaterra</p>
+          <p>ESTADIO: Anfield</p>
+          <p>APODO: The Reds</p>
+          <h2 class="text-2xl font-bold mb-4">HISTORIA DEL CLUB</h2>
+          <p> Liverpool se fundó en 1892 y rápidamente se convirtió en un gigante del fútbol inglés. Durante los años 70 y 80, el club dominó tanto en Inglaterra como en Europa, consolidando su reputación. </p>
+          <p>En 2005, alcanzó una memorable victoria en la final de la Champions League contra el AC Milan, y en 2020, después de 30 años, ganó la Premier League bajo la dirección de Jürgen Klopp, reafirmando su lugar en la élite del fútbol mundial   ​</p>
+ 
         </div>
-      </div>
-
-
-      <div class="texto">
-        <h1 class="text-center my-4 font-bold" style="font-size: 26px; color: black;">
-          Fundación y Primeros Años (1892-1959)
-        </h1>        
-        <p>
-          Liverpool F.C. fue fundado el 15 de marzo de 1892, tras una disputa con el Everton F.C. sobre el alquiler del estadio Anfield. El club se unió a la Football League en 1893 y rápidamente comenzó a destacar en el fútbol inglés. Bajo la dirección del mánager Tom Watson, Liverpool ganó su primer título de liga en 1901 y su primer FA Cup en 1906.
-        </p>
-        <h1 class="text-center my-4 font-bold" style="font-size: 26px; color: black;">
-          Éxitos Nacionales (1959-1980)
-        </h1>        
-        <p>
-          En la década de 1960, Liverpool comenzó a consolidarse como uno de los equipos más exitosos de Inglaterra. Ganaron su primera Liga de Campeones de la UEFA en 1977, y en los años siguientes, el club acumuló numerosos títulos nacionales, incluyendo la Liga Premier y la FA Cup.
-        </p>
-        <h1 class="text-center my-4 font-bold" style="font-size: 26px; color: black;">
-          Dominio Europeo (1980-1990)
-        </h1>        
-        <p>
-          Los años 80 fueron una década dorada para Liverpool, con el club ganando cuatro títulos de la Liga de Campeones de la UEFA (1981, 1984, 1985, 1986) y varios campeonatos de liga y copas nacionales. Jugadores icónicos como Kenny Dalglish y Ian Rush fueron fundamentales en estos éxitos.
-        </p>
-        <h1 class="text-center my-4 font-bold" style="font-size: 26px; color: black;">
-          Modernización y Reconstrucción (1990-2000)
-        </h1>        
-        <p>
-          A pesar de algunos altibajos en los años 90, Liverpool continuó siendo un equipo competitivo en la liga y en competiciones europeas. En 1992, el club se convirtió en uno de los miembros fundadores de la Premier League, la nueva primera división del fútbol inglés.
-        </p>      
-        <h1 class="text-center my-4 font-bold" style="font-size: 26px; color: black;">
-          Éxitos Recientes (2000-Presente)
-        </h1>        
-        <p>
-          En los últimos años, Liverpool ha experimentado un resurgimiento bajo la dirección de entrenadores como Rafael Benítez y Jürgen Klopp. El club ha ganado múltiples títulos de liga, la FA Cup y la Liga de Campeones de la UEFA en 2005 y 2019. Jugadores como Steven Gerrard, Mohamed Salah y Virgil van Dijk han sido clave en estos éxitos.
-        </p>            
-      
-
+        <div class="achievements">
+          <h2 class="text-2xl font-bold mb-4">LOGROS</h2>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">1977, 1978, 1981, 1984, 2005, 2019</span>
+            <span>Champions League</span>
+          </div>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">1947, 1973, 1986, 1990, 2020</span>
+            <span>Premier League</span>
+          </div>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">1965, 1974, 1986, 1989, 2001, 2006, 2022</span>
+            <span>FA Cup</span>
+          </div>
+        </div>
+        <div class="identity">
+          <h2 class="text-2xl font-bold mb-4">IDENTIDAD DEL EQUIPO</h2>
+          <div class="ability-bar">
+            <span class="w-24">Tradición</span>
+            {[...Array(9)].map((_, i) => (
+              <div class="ability-dot"></div>
+            ))}
+          </div>
+          <div class="ability-bar">
+            <span class="w-24">Cantera</span>
+            {[...Array(8)].map((_, i) => (
+              <div class="ability-dot"></div>
+            ))}
+          </div>
+          <div class="ability-bar">
+            <span class="w-24">Afición</span>
+            {[...Array(10)].map((_, i) => (
+              <div class="ability-dot"></div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
-  </main>
-
-  <footer class="footer">
-    <p>© 2024 Tu Empresa. Todos los derechos reservados.</p>
-  </footer>
+  </div>
 </Layout>

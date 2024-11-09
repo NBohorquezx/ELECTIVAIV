@@ -1,137 +1,272 @@
 ---
 import Layout from "../layouts/Layout.astro";
 ---
-
-<style>
-  body {
+<Layout title="C.vargas">
+  <style>
+    body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: url(img/fondo_jugador.png) no-repeat center center fixed;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      cursor: url('https://spar2099.sirv.com/la_seleccion/guayo2.png') 16 16, auto;
   }
+  a { cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), pointer; /* Cambia el cursor sobre enlaces */ } 
+  button { cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), pointer; /* Cambia el cursor sobre botones */ } 
+  .custom-cursor { cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), auto; /* Cambia el cursor en elementos específicos */ } /* Mantener el cursor al hacer clic */ 
+  a:active,
+   button:active, 
+   .custom-cursor:active { 
+    cursor: url('https://spar2099.sirv.com/la_seleccion/guayo3.png'), auto; /* Mantener el cursor al hacer clic */ }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .resume {
+      background-color: #111;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
 
-  .contenedor {
-    width: 66%;
-    margin: 20px auto;
-    background-color: rgba(0, 0, 0, 0.7);
-    border: 5px solid #004488;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    position: relative;
-    padding: 20px;
-    flex: 1;
-    padding-bottom: 10px;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-gap: 20px;
-  }
-
-  .texto {
-    grid-column: 1 / 2;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 40px;
-  }
-
-  .foto {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    overflow: hidden; /* Importante para que la imagen no sobresalga del contenedor */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 75%; /* Asegura que el contenedor ocupe toda la altura asignada */
-  }
-
-  .foto img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Para que la imagen cubra todo el contenedor */
-  }
-
-  .equipos {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-    display: flex;
-    gap: 10px;
-  }
-
-  .equipos .equipo {
-    flex: 1;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 10px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .equipos .equipo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-  }
-</style>
-
-<Layout title="Nueva Pestaña">
-  <main>
-    <div class="contenedor">
-      <!-- Sección de Texto -->
-      <div class="texto">
-        <h1>Bienvenido a la Nueva Pestaña</h1>
-        <p>
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+    .about-me, .abilities, .position, .teams {
+      background-color: #222;
+      border-radius: 5px;
+      padding: 15px;
+    }
+    .photo {
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+      border-radius: 5px;
+      margin: 0 auto;
+      transform: translateX(7%); /* Desplazo la imagen 10% a la derecha */
+    }
+    .photo img {
+      width: 170%; /* Hago la imagen más grande */
+      height: 170%; /* Hago la imagen más grande */
+      object-fit: cover;
+    }
+    .ability-bar {
+      display: flex;
+      margin-bottom: 10px;
+    }
+    .ability-dot {
+      width: 15px;
+      height: 15px;
+      background-color: #00ccff;
+      border-radius: 50%;
+      margin-right: 5px;
+    }
+    .field {
+      width: 100%;
+      height: 150px;
+      border: 2px solid #00ccff;
+      position: relative;
+    }
+    .player-position {
+      width: 20px;
+      height: 20px;
+      background-color: #00ccff;
+      border-radius: 50%;
+      position: absolute;
+    }
+    .history {
+      background-color: #222;
+      border-radius: 5px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    .equipos {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+      display: flex;
+      gap: 40px; /* Ajusto la distancia entre las imágenes */
+      justify-content: center; /* Centrar las imágenes */
+      width: 70%; /* Hago la imagen más grande */
+      height: 80%; /* Hago la imagen más grande */
+      transform: translateX(25%); /* Desplazo la imagen 10% a la derecha */
+    }
+  </style>
+  <div class="container">
+    <div class="resume">
+      <div class="header">
+        <h1 class="text-4xl font-bold">.</h1>
+      </div>
+      <div class="content">
+        <div class="photo">
+          <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/r_rios.png" alt="Player Photo" />
+        </div>
+        <div class="about-me">
+          <h2 class="text-2xl font-bold mb-4">
+            ACERCA DE MÍ
+          </h2>
+          <p>LUGAR DE NACIMIENTO: La Guajira-Colombia</p>
+          <p>FECHA DE NACIMIENTO: 02-01-2000</p>
+          <p>EDAD: 25</p>
+          <p>ALTURA: 1.86 cm</p>
+          <p>PIERNA HABIL: Pierna derecha</p>
+        </div>
+        <div class="equipos">
+          <div class="equipo">
+            <a href="palmeiras">
+              <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/Palmeiras.png" alt="liverpool" />
+            </a>
+          </div>
+          <div class="equipo">
+            <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/Campeonato-Brasileiro-S%C3%A9rie-A-logo.png" alt="Equipo 2" />
+          </div>
+        </div>
+        <div class="teams">
+          <h2 class="text-2xl font-bold mb-4">EQUIPOS ANTERIORES</h2>
+          <br>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">2020-2022</span>
+            <span>C.R Flamenco</span>
+          </div>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">2022-2023</span>
+            <span>Guarani </span>
+          </div>
+          <div class="flex justify-between">
+            <span style="color: #00ccff;">2023-Presente</span>
+            <span>S. E Palmeiras</span>
+          </div>
+        </div>
+        
+        <div className="position">
+          <h2 className="text-2xl font-bold mb-4">POSICIÓN EN EL CAMPO</h2>
+          <br>
+          <div className="field-container" style={{ 
+            width: '80px',
+            aspectRatio: '1.5/1',
+            position: 'relative',
+            marginBottom: '1rem'
+          }}>
+            <div className="field" style={{
+              width: '550px',
+              height: '200px',
+              border: '2px solid #00ccff',
+              position: 'relative',
+              backgroundColor: '#000000',
+              borderRadius: '4px'
+            }}>
+              {/* Penalty Area */}
+              <div style={{
+                position: 'absolute',
+                left: '0',
+                top: '100px',
+                transform: 'translateY(-50%)',
+                width: '50px',
+                height: '90px',
+                border: '2px solid #00ccff',
+                borderLeft: 'none'
+              }} />
+              <div style={{
+                position: 'absolute',
+                right: '0',
+                top: '100px',
+                transform: 'translateY(-50%)',
+                width: '50px',
+                height: '90px',
+                border: '2px solid #00ccff',
+                borderRight: 'none'
+              }} />
+              
+              {/* Center Circle */}
+              <div style={{
+                position: 'absolute',
+                left: '275px',
+                top: '100px',
+                transform: 'translate(-50%, -50%)',
+                width: '60px',
+                height: '60px',
+                border: '2px solid #00ccff',
+                borderRadius: '80px'
+              }} />
+              
+              {/* Center Line */}
+              <div style={{
+                position: 'absolute',
+                left: '275px',
+                top: '0',
+                width: '2px',
+                height: '199px',
+                backgroundColor: '#00ccff'
+              }} />
+              
+              {/* Player Position Dots */}
+              <div style={{
+                position: 'absolute',
+                left: '30px',
+                top: '100px',
+                width: '12px',
+                height: '12px',
+                backgroundColor: '#00ccff',
+                borderRadius: '50%',
+                transform: 'translate(-50%, -50%)'
+              }} />
+              
+            </div>
+          </div>
+         
+        </div>
+        <div class="abilities">
+          <h2 class="text-2xl font-bold mb-4">HABILIDADES</h2>
+          <br>
+          
+          <div class="ability-bar">
+            <span class="w-24">control </span>
+            {[...Array(9)].map((_, i) => (
+              <div key={i} class="ability-dot"></div>
+            ))}
+          </div>
+          
+          <div class="ability-bar">
+            <span class="w-24">Regate</span>
+            {[...Array(8)].map((_, i) => (
+              <div key={i} class="ability-dot"></div>
+            ))}
+          </div>
+          
+          <div class="ability-bar">
+            <span class="w-24">Remate</span>
+            {[...Array(7)].map((_, i) => (
+              <div key={i} class="ability-dot"></div>
+            ))}
+          </div>
+          
+          <div class="ability-bar">
+            <span class="w-24">Aceleración
+            </span>
+            {[...Array(6)].map((_, i) => (
+              <div key={i} class="ability-dot"></div>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div class="history">
+        <h2 class="text-2xl font-bold mb-4">HISTORIA DEL JUGADOR</h2>
+        <p class="mb-4">
           Richard Ríos Montoya, nacido el 2 de junio de 2000 en Medellín, Colombia, es un talentoso futbolista que ha captado la atención tanto a nivel nacional como internacional. Comenzó su carrera en las divisiones inferiores del Atlético Nacional, uno de los clubes más importantes de Colombia. Desde joven, Ríos mostró un gran potencial, destacándose por su habilidad técnica, visión de juego y capacidad para marcar goles desde el mediocampo.
-        </p>
-        <br><br>
-        <p>
-          En 2019, Ríos fue promovido al primer equipo de Atlético Nacional, donde tuvo la oportunidad de debutar en la liga profesional colombiana. Su desempeño en el campo no pasó desapercibido, y pronto se convirtió en una pieza clave del equipo. Su habilidad para controlar el ritmo del juego y su precisión en los pases lo hicieron destacar entre sus compañeros y rivales.
-        </p>
-        <p>
+          En 2019, Ríos fue promovido al primer equipo de Atlético Nacional, donde tuvo la oportunidad de debutar en la liga profesional colombiana. Su desempeño en el campo no pasó desapercibido, y pronto se convirtió en una pieza clave del equipo. Su habilidad para controlar el ritmo del juego y su precisión en los pases lo hicieron destacar entre sus compañeros y rivales.        </p>
+        <p class="mb-4">
           El talento de Richard Ríos no se limitó a su club. En 2021, fue convocado a la selección sub-20 de Colombia, donde jugó un papel crucial en el Campeonato Sudamericano Sub-20. Su desempeño en el torneo fue impresionante, ayudando a Colombia a alcanzar las etapas finales y ganándose el reconocimiento como uno de los mejores mediocampistas jóvenes del continente.
-        </p>
-        <br><br>
-        <p>
-          En 2022, Ríos dio el salto al fútbol internacional al unirse al Palmeiras de Brasil, uno de los clubes más prestigiosos de América del Sur. Su adaptación al fútbol brasileño fue rápida, y pronto se convirtió en un jugador importante para el equipo. Con Palmeiras, Ríos ha ganado varios títulos, incluyendo el Campeonato Brasileño y la Copa Libertadores, consolidando su reputación como un mediocampista de clase mundial.
-        </p>
-        <p>
+          En 2022, Ríos dio el salto al fútbol internacional al unirse al Palmeiras de Brasil, uno de los clubes más prestigiosos de América del Sur. Su adaptación al fútbol brasileño fue rápida, y pronto se convirtió en un jugador importante para el equipo. Con Palmeiras, Ríos ha ganado varios títulos, incluyendo el Campeonato Brasileño y la Copa Libertadores, consolidando su reputación como un mediocampista de clase mundial.        </p>
+        <p class="mb-4">
           A nivel internacional, Richard Ríos ha comenzado a dejar su huella en la selección mayor de Colombia. Debutó en 2023 en un amistoso contra México, y desde entonces ha sido convocado regularmente para las eliminatorias del Mundial de 2026. Su capacidad para influir en el juego desde el mediocampo y su habilidad para marcar goles importantes lo han convertido en un jugador valioso para el equipo nacional.
-        </p>
-        <br><br>
-        <p>
           Además de sus logros en el campo, Ríos es conocido por su dedicación y ética de trabajo. Fuera del campo, es un ejemplo de profesionalismo y humildad, siempre dispuesto a aprender y mejorar. Su actitud positiva y su compromiso con el equipo lo han convertido en un líder tanto dentro como fuera del campo.
         </p>
         <p>
           En 2024, Ríos fue parte del equipo de Palmeiras que ganó la Recopa Sudamericana, añadiendo otro título importante a su ya impresionante palmarés. Su desempeño en el torneo fue destacado, y fue nombrado el mejor jugador del partido en la final. Este reconocimiento subraya su importancia para el equipo y su capacidad para rendir en los momentos más cruciales.
         </p>
-        <!-- Más texto si es necesario -->
-      </div>
-
-      <!-- Sección de Foto -->
-      <div class="foto">
-        <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/r_rios.png" alt="Foto del jugador" />
-      </div>
-
-      <!-- Sección de Equipos -->
-      <div class="equipos">
-        <div class="equipo">
-          <a href="palmeiras">
-            <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/Palmeiras.png" alt="palmeiras" />
-          </a>
-          
-        </div>
-        <div class="equipo">
-          <img src="https://nuvvv-0115.sirv.com/Shared/la_seleccion-from-spar2099/Campeonato-Brasileiro-S%C3%A9rie-A-logo.png" alt="Equipo 2" />
-        </div>
       </div>
     </div>
-  </main>
-  <footer class="footer">
-    <p>© 2024 Tu Empresa. Todos los derechos reservados.</p>
-  </footer>
+  </div>
 </Layout>
