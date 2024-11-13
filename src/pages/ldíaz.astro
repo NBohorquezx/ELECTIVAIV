@@ -208,8 +208,8 @@ import Layout from "../layouts/Layout.astro";
               {/* Player Position Dots */}
               <div style={{
                 position: 'absolute',
-                left: '30px',
-                top: '100px',
+                left: '450px',
+                top: '180px',
                 width: '12px',
                 height: '12px',
                 backgroundColor: '#00ccff',
@@ -227,14 +227,14 @@ import Layout from "../layouts/Layout.astro";
           
           <div class="ability-bar">
             <span class="w-24">control </span>
-            {[...Array(9)].map((_, i) => (
+            {[...Array(8)].map((_, i) => (
               <div key={i} class="ability-dot"></div>
             ))}
           </div>
           
           <div class="ability-bar">
             <span class="w-24">Regate</span>
-            {[...Array(8)].map((_, i) => (
+            {[...Array(9)].map((_, i) => (
               <div key={i} class="ability-dot"></div>
             ))}
           </div>
@@ -249,7 +249,7 @@ import Layout from "../layouts/Layout.astro";
           <div class="ability-bar">
             <span class="w-24">Aceleración
             </span>
-            {[...Array(6)].map((_, i) => (
+            {[...Array(9)].map((_, i) => (
               <div key={i} class="ability-dot"></div>
             ))}
           </div>
